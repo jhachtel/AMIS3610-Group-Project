@@ -1,0 +1,6 @@
+Recipe organizer
+streaming social media platform
+
+*Original File was created by Alex.
+In order to get the repo started properly I had to force the initial push.
+That deleted the ideas.txt file, so I'm recreating it.
