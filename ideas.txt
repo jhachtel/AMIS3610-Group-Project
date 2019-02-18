@@ -1,5 +1,7 @@
 Recipe organizer
 streaming social media platform
+Travel/Backpacker App
+Help me budget App
 
 *Original File was created by Alex.
 In order to get the repo started properly I had to force the initial push.
