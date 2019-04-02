@@ -1,0 +1,16 @@
+Location
+  Country
+  City
+  Park(Hiking trail, biking trail, Grand Canyon....) 
+  Hotel/Hostel(Some other word for place you stay at)
+  
+Activity
+  Trail
+  Site(i.e. Monuments, Museums, BurningMan.....)
+  Resteraunt
+  Other 
+
+Gear    ->(Integrate with sites to view where to get, i.e. REI for Climbing Shoes)
+  Backpack
+  Shoes
+  Other gear you use on your trip or that are "essentials"
