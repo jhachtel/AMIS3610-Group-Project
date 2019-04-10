@@ -14,5 +14,15 @@ namespace Fisher.Bookstore.Api.Models
 
         public List<Book> Titles { get; set; }
 
+        public void ChangeId(int id)
+        {
+            this.Id = id;
+        }
+
+        public void UpdateBio(String bio)
+        {
+            this.Bio = bio;
+        }
+
     }
 }

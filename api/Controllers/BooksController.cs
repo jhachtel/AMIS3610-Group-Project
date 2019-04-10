@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Fisher.Bookstore.Api.Data;
 using Fisher.Bookstore.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using Fisher.Bookstore.Api;
 
 namespace Fisher.Bookstore.Api.Controllers
 {
