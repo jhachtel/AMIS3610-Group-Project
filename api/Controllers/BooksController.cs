@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Fisher.Bookstore.Api.Data;
-using Fisher.Bookstore.Api.Models;
+using AMIS3610.GroupProject.Api.Data;
+using AMIS3610.GroupProject.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Fisher.Bookstore.Api.Controllers
+namespace AMIS3610.GroupProject.Api.Controllers
 {
     [Route("api/books")]
     [ApiController]

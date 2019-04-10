@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Fisher.Bookstore.Api.Migrations
+namespace AMIS3610.GroupProject.Api.Migrations
 {
     public partial class identity : Migration
     {
