@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\api\Fisher.Bookstore.Api.csproj" />
+    <ProjectReference Include="..\api\AMIS3610.GroupProject.Api.csproj" />
   </ItemGroup>
 
 </Project>

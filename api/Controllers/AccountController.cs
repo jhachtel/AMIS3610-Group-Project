@@ -1,12 +1,12 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Fisher.Bookstore.Api.Data;
-using Fisher.Bookstore.Api.Models;
+using AMIS3610.GroupProject.Api.Data;
+using AMIS3610.GroupProject.Api.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
-namespace Fisher.Bookstore.Api.Controllers
+namespace AMIS3610.GroupProject.Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/account")]

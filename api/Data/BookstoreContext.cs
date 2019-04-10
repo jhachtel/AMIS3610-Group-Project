@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Fisher.Bookstore.Api.Models;
-using Fisher.Bookstore.Api;
+using AMIS3610.GroupProject.Api.Models;
+using AMIS3610.GroupProject.Api;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace Fisher.Bookstore.Api.Data
+namespace AMIS3610.GroupProject.Api.Data
 
 {
     public class BookstoreContext : IdentityDbContext<ApplicationUser>
