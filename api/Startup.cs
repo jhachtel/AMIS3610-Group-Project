@@ -50,7 +50,7 @@ namespace Fisher.Bookstore.Api
                         ValidateLifetime = true,
                         ValidIssuer = Configuration["JWTConfiguration:Issuer"],
                         ValidAudience = Configuration["JWTConfiguration:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTConfiguration.Key"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTConfiguration:Key"]))
                     };
                 });
 
