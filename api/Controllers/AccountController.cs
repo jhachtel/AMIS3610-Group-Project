@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AMIS3610.GroupProject.Api.Data;
 using AMIS3610.GroupProject.Api.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
