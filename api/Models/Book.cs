@@ -1,6 +1,6 @@
 using System;
 
-namespace Fisher.Bookstore.Api.Models
+namespace AMIS3610.GroupProject.Api.Models
 {
     public class Book
     {

@@ -12,13 +12,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using Fisher.Bookstore.Api.Models;
-using Fisher.Bookstore.Api.Data;
+using AMIS3610.GroupProject.Api.Models;
+using AMIS3610.GroupProject.Api.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Fisher.Bookstore.Api
+namespace AMIS3610.GroupProject.Api
 {
     public class Startup
     {

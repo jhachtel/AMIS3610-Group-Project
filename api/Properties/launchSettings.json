@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Fisher.Bookstore.Api": {
+    "AMIS3610.GroupProject.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
