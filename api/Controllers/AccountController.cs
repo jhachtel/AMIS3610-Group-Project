@@ -76,12 +76,21 @@ namespace AMIS3610.GroupProject.Api.Controllers
             ApplicationUser user = await userManager.FindByEmailAsync(login.Email);
             JwtSecurityToken token = await GenerateTokenAsync(user);
             string serializedToken = new JwtSecurityTokenHandler().WriteToken(token);
-            return Ok();
+            
+            var response = new { token = serializedToken };
+
+            return Ok(response);
         }
 
         private async Task<JwtSecurityToken> GenerateTokenAsync(ApplicationUser user)
         {
-            var claims = new List<Claim>();
+            var claims = new List<Claim>()
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.Name, user.UserName),
+            };
 
             var expirationDays = configuration.GetValue<int>("JWTConfiguration:TokenExpirationDays");
 
@@ -95,7 +104,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
                 notBefore: DateTime.UtcNow,
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(signingKey), SecurityAlgorithms.HmacSha256));
 
-                return token;
+            return token;
         }
     }
 
