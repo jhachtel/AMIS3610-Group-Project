@@ -1,5 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using AMIS3610.GroupProject.Api.Data;
 using AMIS3610.GroupProject.Api.Models;
@@ -7,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AMIS3610.GroupProject.Api.Controllers
 {
@@ -61,10 +66,8 @@ namespace AMIS3610.GroupProject.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] ApplicationUser login)
         {
-            var result = await signInManager.PasswordSignInAsync
-            (
-                login.Email, login.Password, isPersistent: false, lockoutOnFailure: false
-            );
+            var result = await signInManager.PasswordSignInAsync(
+                login.Email, login.Password, isPersistent: false, lockoutOnFailure: false);
             if (!result.Succeeded)
             {
                 return Unauthorized();
@@ -74,6 +77,25 @@ namespace AMIS3610.GroupProject.Api.Controllers
             JwtSecurityToken token = await GenerateTokenAsync(user);
             string serializedToken = new JwtSecurityTokenHandler().WriteToken(token);
             return Ok();
+        }
+
+        private async Task<JwtSecurityToken> GenerateTokenAsync(ApplicationUser user)
+        {
+            var claims = new List<Claim>();
+
+            var expirationDays = configuration.GetValue<int>("JWTConfiguration:TokenExpirationDays");
+
+            var signingKey = Encoding.UTF8.GetBytes(configuration.GetValue<string>("JWTConfiguration:Key"));
+
+            var token = new JwtSecurityToken(
+                issuer: configuration.GetValue<string>("JWTConfiguration:Issuer"),
+                audience: configuration.GetValue<string>("JWTConfiguration:Audience"),
+                claims: claims,
+                expires: DateTime.UtcNow.Add(TimeSpan.FromDays(expirationDays)),
+                notBefore: DateTime.UtcNow,
+                signingCredentials: new SigningCredentials(new SymmetricSecurityKey(signingKey), SecurityAlgorithms.HmacSha256));
+
+                return token;
         }
     }
 
