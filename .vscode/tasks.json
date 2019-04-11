@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/api/Fisher.Bookstore.Api.csproj"
+                "${workspaceFolder}/api/AMIS3610.GroupProject.Api.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

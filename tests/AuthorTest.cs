@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using Fisher.Bookstore.Api.Models;
+using AMIS3610.GroupProject.Api.Models;
 
 namespace tests
 {
