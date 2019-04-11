@@ -1,7 +1,9 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using AMIS3610.GroupProject.Api.Data;
 using AMIS3610.GroupProject.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -52,6 +54,25 @@ namespace AMIS3610.GroupProject.Api.Controllers
 
                 return BadRequest(ModelState);
             }
+            return Ok();
+        }
+
+        [AllowAnonymous]
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] ApplicationUser login)
+        {
+            var result = await signInManager.PasswordSignInAsync
+            (
+                login.Email, login.Password, isPersistent: false, lockoutOnFailure: false
+            );
+            if (!result.Succeeded)
+            {
+                return Unauthorized();
+            }
+
+            ApplicationUser user = await userManager.FindByEmailAsync(login.Email);
+            JwtSecurityToken token = await GenerateTokenAsync(user);
+            string serializedToken = new JwtSecurityTokenHandler().WriteToken(token);
             return Ok();
         }
     }
