@@ -6,6 +6,7 @@ namespace AMIS3610.GroupProject.Api.Models
 {
     public class ApplicationUser : IdentityUser
     {
+
         [NotMapped]
         [Required]
         [StringLength(100, MinimumLength = 6)]

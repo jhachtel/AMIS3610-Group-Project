@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using AMIS3610.GroupProject.Api.Data;
 using AMIS3610.GroupProject.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AMIS3610.GroupProject.Api.Controllers
@@ -63,6 +64,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Post([FromBody]Book book)
         {
             if (book == null)
@@ -77,6 +79,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult Put(int id, [FromBody]Book book)
         {
             if (book == null || book.Id != id)
@@ -100,6 +103,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult Delete(int id)
         {
             var book = db.Books.FirstOrDefault(b => b.Id == id);

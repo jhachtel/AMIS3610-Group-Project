@@ -9,7 +9,6 @@ using AMIS3610.GroupProject.Api.Data;
 using AMIS3610.GroupProject.Api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -21,6 +20,10 @@ namespace AMIS3610.GroupProject.Api.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+        private UserManager<ApplicationUser> userManager;
+        private SignInManager<ApplicationUser> signInManager;
+        private IConfiguration configuration;
+
         public AccountController(UserManager<ApplicationUser> userManager, 
             SignInManager<ApplicationUser> signInManager, 
             IConfiguration configuration)
@@ -102,6 +105,13 @@ namespace AMIS3610.GroupProject.Api.Controllers
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(signingKey), SecurityAlgorithms.HmacSha256));
 
             return token;
+        }
+
+        [Authorize]
+        [HttpGet("profile")]
+        public IActionResult Profile()
+        {
+            return Ok(User.Identity.Name);
         }
     }
 
