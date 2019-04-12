@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AMIS3610.GroupProject.Api.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20190406142841_identity")]
-    partial class identity
+    [Migration("20190412042327_NewAzureDatabase")]
+    partial class NewAzureDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

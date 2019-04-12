@@ -21,10 +21,6 @@ namespace AMIS3610.GroupProject.Api.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private UserManager<ApplicationUser> userManager;
-        private SignInManager<ApplicationUser> signInManager;
-        private IConfiguration configuration;
-
         public AccountController(UserManager<ApplicationUser> userManager, 
             SignInManager<ApplicationUser> signInManager, 
             IConfiguration configuration)
