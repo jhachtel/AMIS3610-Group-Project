@@ -2,7 +2,7 @@ using System;
 using Xunit;
 using AMIS3610.GroupProject.Api.Models;
 
-namespace tests
+namespace AMIS3610.GroupProject.Api.Tests
 {
     public class BookTest
     {
