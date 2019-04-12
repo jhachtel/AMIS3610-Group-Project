@@ -23,7 +23,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
         private UserManager<ApplicationUser> userManager;
         private SignInManager<ApplicationUser> signInManager;
         private IConfiguration configuration;
-        
+
         public AccountController(UserManager<ApplicationUser> userManager, 
             SignInManager<ApplicationUser> signInManager, 
             IConfiguration configuration)
@@ -105,6 +105,13 @@ namespace AMIS3610.GroupProject.Api.Controllers
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(signingKey), SecurityAlgorithms.HmacSha256));
 
             return token;
+        }
+
+        [Authorize]
+        [HttpGet("profile")]
+        public IActionResult Profile()
+        {
+            return Ok(User.Identity.Name);
         }
     }
 
