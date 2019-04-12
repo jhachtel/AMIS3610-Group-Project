@@ -30,3 +30,5 @@ Azure-offthetrail.png in other-resources folder.
 
 --------------------------------
 
+Migrations Documentation:
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/
