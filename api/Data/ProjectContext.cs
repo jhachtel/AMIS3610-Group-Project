@@ -18,5 +18,8 @@ namespace AMIS3610.GroupProject.Api.Data
 
         public DbSet<Gear> Gear { get; set; }
         public DbSet<Place> Place { get; set; }
+        public DbSet<Trail> Trail {get; set;}
+        public DbSet<People> People { get; set; }
+        public DbSet<Trip> Trip { get; set; }
     }
 }
