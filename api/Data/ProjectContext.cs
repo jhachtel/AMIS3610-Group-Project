@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace AMIS3610.GroupProject.Api.Data
 
 {
-    public class BookstoreContext : IdentityDbContext<ApplicationUser>
+    public class ProjectContext : IdentityDbContext<ApplicationUser>
     {
-        public BookstoreContext(DbContextOptions<BookstoreContext> options)
+        public ProjectContext(DbContextOptions<ProjectContext> options)
             : base(options)
         {
 
@@ -16,7 +16,7 @@ namespace AMIS3610.GroupProject.Api.Data
 
         protected override void OnModelCreating(ModelBuilder builder) => base.OnModelCreating(builder);
 
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Author> Authors { get; set; }
+        public DbSet<Gear> Gear { get; set; }
+        public DbSet<Place> Place { get; set; }
     }
 }
