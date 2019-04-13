@@ -54,6 +54,14 @@ namespace AMIS3610.GroupProject.Api
                     };
                 });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -70,8 +78,8 @@ namespace AMIS3610.GroupProject.Api
             }
 
             app.UseAuthentication();
-
             app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
