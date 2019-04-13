@@ -1,0 +1,32 @@
+
+{
+
+	"Email": "test@user.com",
+
+	"Password": "mKJc7vbH8xfB#",
+
+	"ConfirmPassword": "mKJc7vbH8xfB#"
+
+}
+
+
+{
+
+	"Email": "test1@user.com",
+
+	"Password": "nKJc7vbH8xfB#",
+
+	"ConfirmPassword": "nKJc7vbH8xfB#"
+
+}
+
+
+{
+
+	"Email": "test2@user.com",
+
+	"Password": "oKJc7vbH8xfB#",
+
+	"ConfirmPassword": "oKJc7vbH8xfB#"
+
+}
