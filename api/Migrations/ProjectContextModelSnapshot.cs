@@ -3,17 +3,15 @@ using System;
 using AMIS3610.GroupProject.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AMIS3610.GroupProject.Api.Migrations
 {
-    [DbContext(typeof(BookstoreContext))]
-    [Migration("20190412042327_NewAzureDatabase")]
-    partial class NewAzureDatabase
+    [DbContext(typeof(ProjectContext))]
+    partial class ProjectContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,40 +69,40 @@ namespace AMIS3610.GroupProject.Api.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Author", b =>
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Gear", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Bio");
+                    b.Property<string>("Brand");
+
+                    b.Property<string>("Description");
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("Type");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Gear");
                 });
 
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Book", b =>
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Place", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AuthorId");
+                    b.Property<string>("Description");
 
-                    b.Property<string>("ISBN");
+                    b.Property<string>("Location");
 
-                    b.Property<DateTime>("PublishDate");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Publisher");
-
-                    b.Property<string>("Title");
+                    b.Property<string>("Type");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
-                    b.ToTable("Books");
+                    b.ToTable("Place");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -212,13 +210,6 @@ namespace AMIS3610.GroupProject.Api.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Book", b =>
-                {
-                    b.HasOne("AMIS3610.GroupProject.Api.Models.Author", "Author")
-                        .WithMany("Titles")
-                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
