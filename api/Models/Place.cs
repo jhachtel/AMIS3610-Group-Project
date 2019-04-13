@@ -4,20 +4,41 @@ namespace AMIS3610.GroupProject.Api.Models
 {
     public class Place
     {
-        public int Id{get; set;}
+        public int Id { get; set; }
 
-        public string Country{get; set;}
+        public string Name { get; set; }
 
-        public string State{get; set;}
+        public string Location { get; set; }
 
-        public string City{get; set;}
+        public string Type { get; set; }
 
-        public string Park{get; set;}
+        public string Description { get; set; }
 
-        public string Resteraunt{get; set;}
+        
+        public void ChangeId(int newId)
+        {
+            this.Id = newId;
+        }
 
-        public string Lodging{get; set;}
+        public void ChangeName(string newName)
+        {
+            this.Name = newName;
+        }
 
-        public string attraction{get;set;}
+        public void ChangeLocation(string newLocation)
+        {
+            this.Location = newLocation;
+        }
+
+        public void ChangeType(string newType)
+        {
+            this.Type = newType;
+        }
+
+        public void ChangeDescription(string newDescription)
+        {
+            this.Description = newDescription;
+        }
+
     }
 }

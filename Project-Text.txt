@@ -1,6 +1,7 @@
 Gear
 
 1
+"Backpack"
 "Osprey Kestrel 28 Pack - 2018 - Men's"
 "https://www.rei.com/product/895641/osprey-kestrel-28-pack-2018-mens"
 "
@@ -14,6 +15,7 @@ Gear
 "
 
 2
+"Backpack"
 " REI Co-op Trail 25 Pack - Men's "
 "https://www.rei.com/product/136585/rei-co-op-trail-25-pack-mens"
 "
@@ -30,6 +32,7 @@ Gear
 "
 
 3
+"Climbing"
 " Black Diamond Momentum Harness - Women's "
 "https://www.rei.com/product/126522/black-diamond-momentum-harness-womens"
 "
@@ -42,15 +45,17 @@ Gear
 "
 
 4
+"Climbing"
 " BlueWater 7mm x 30 ft. Accessory Cord "
 "https://www.rei.com/product/118270/bluewater-7mm-x-30-ft-accessory-cord"
 
 5
+"Bag"
 " REI Co-op Big Haul 40 Duffel "
 "https://www.rei.com/product/118811/rei-co-op-big-haul-40-duffel"
 "
     Rugged ripstop nylon upper combines with a tough ballistic nylon base for durability
-    Versatile carrying optionsï¿½crossbody strap, removable duffel handles and stowable backpack straps
+    Versatile carrying options—crossbody strap, removable duffel handles and stowable backpack straps
     Side and end handles make it easy to grab and go
     Innovative compression strap system helps compact large loads
     Daisy chain has lots of lash points for easy gear storage
@@ -130,7 +135,7 @@ Trail
 "Hocking Hills"
 
 5
-"Appalachian Trail"
+"Apalacian Trail"
 
 Trip
 
@@ -146,7 +151,7 @@ Trip
 "Here I was walking a trail from Grindlewald up one of the local trails and....."
 
 4
-"Grand Canyon"
+"Grand Caynon"
 "Forgettable hole in the ground"
 
 5
