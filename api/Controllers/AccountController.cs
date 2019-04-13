@@ -20,10 +20,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-<<<<<<< HEAD
         
-=======
->>>>>>> master
         private UserManager<ApplicationUser> userManager;
         private SignInManager<ApplicationUser> signInManager;
         private IConfiguration configuration;
