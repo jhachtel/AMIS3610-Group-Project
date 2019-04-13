@@ -32,11 +32,7 @@ namespace AMIS3610.GroupProject.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-<<<<<<< HEAD
             services.AddDbContext<ProjectContext>(options => options.UseNpgsql(Configuration.GetConnectionString("ProjectContext")));
-=======
-            services.AddDbContext<BookstoreContext>(options => options.UseNpgsql(Configuration.GetConnectionString("BookstoreConnection")));
->>>>>>> master
             
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ProjectContext>().AddDefaultTokenProviders();
 
