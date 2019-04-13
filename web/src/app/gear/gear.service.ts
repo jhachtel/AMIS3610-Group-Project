@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Book } from './book';
+import { Gear } from './gear';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BooksService {
+export class GearService {
 
-  private booksUri = 'https://localhost:5001/api/books';
+  private gearUri = 'https://localhost:5001/api/gear';
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error('${operation} failed: ${error.message}');
@@ -19,10 +20,10 @@ export class BooksService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks() {
-    return this.http.get<Book[]>(this.booksUri).pipe(
-      tap(_ => console.log('fetched books')),
-      catchError(this.handleError<Book[]>('getBooks', []))
+  getGear() {
+    return this.http.get<Gear>(this.gearUri).pipe(
+      tap(_ => console.log('fetched gear')),
+      catchError(this.handleError<Gear>('getGear')) // Removed the [] - Not sure what to do with it.
     );
   }
 }
