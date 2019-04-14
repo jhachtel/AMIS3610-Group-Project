@@ -18,7 +18,7 @@ export class GearComponent implements OnInit {
   }
 
   getGear(): void {
-    this.gearService.getGear()
+    this.gearService.getAllGear()
     .subscribe(gear => this.gear = gear);
   }
 
