@@ -1,5 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule }           from '@angular/core';
+import { BrowserModule }      from '@angular/platform-browser';
+import { FormsModule }        from '@angular/forms';
+import { HttpClientModule }   from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,19 @@ import { TrailsComponent } from './trails/trails/trails.component';
 import { TripsComponent } from './trips/trips/trips.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -27,8 +42,13 @@ import { TripsComponent } from './trips/trips/trips.component';
   imports: [
     BrowserModule,
     AppRoutingModule
+    DashboardComponent,
+    GearComponent,
+    GearDetailComponent,
+    MessagesComponent,
+    GearSearchComponent,
+    NavbarComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

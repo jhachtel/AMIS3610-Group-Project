@@ -1,0 +1,11 @@
+<h3>Top Gear</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let gear of gear" class="col-1-4"
+      routerLink="/detail/{{gear.id}}">
+    <div class="module gear">
+      <h4>{{gear.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-gear-search></app-gear-search>
