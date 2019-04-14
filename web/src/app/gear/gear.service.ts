@@ -20,10 +20,17 @@ export class GearService {
 
   constructor(private http: HttpClient) { }
 
+
+
+
   getGear() {
-    return this.http.get<Gear[]>(this.gearUri).pipe(
-      tap(_ => console.log('fetched gear')),
-      catchError(this.handleError<Gear[]>('getGear', []))
-    );
+    return this.http.get(this.gearUri);
   }
+
+  // getGear() {
+  //   return this.http.get<Gear[]>(this.globalUri)
+  //   .pipe(tap(_ => console.log('fetched gear')),
+  //     catchError(this.handleError<Gear[]>('getGear', []))
+  //   );
+  // }
 }
