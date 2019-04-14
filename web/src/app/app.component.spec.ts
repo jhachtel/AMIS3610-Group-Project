@@ -19,11 +19,12 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  it(`should have as title 'off-the-trail'`, () => {
+  
+  it(`should have as title 'Off The Trail'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('off-the-trail');
+    expect(app.title).toEqual('Off The Trail');
+
   });
 
   it('should render title in a h1 tag', () => {
