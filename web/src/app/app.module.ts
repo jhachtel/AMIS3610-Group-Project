@@ -5,7 +5,7 @@ import { HttpClientModule }   from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { LocationsComponent } from './locations/locations/locations.component';
 import { GearComponent } from './gear/gear/gear.component';
 import { PeopleComponent } from './people/people/people.component';
 import { PlacesComponent } from './places/places/places.component';
@@ -21,7 +21,6 @@ import { MessagesComponent } from './messages/messages.component';
   
   declarations: [
     AppComponent,
-
     GearComponent,
     PeopleComponent,
     PlacesComponent,
@@ -45,4 +44,7 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+
+export class AppModule {
+
+}
