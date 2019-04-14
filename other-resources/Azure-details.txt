@@ -1,0 +1,34 @@
+pgAdmin 4 local setup
+---------------------
+
+https://docs.microsoft.com/en-us/azure/postgresql/quickstart-create-server-database-portal
+
+PGAdmin Settings
+
+General
+Name - off-the-trail
+keep the other settings
+
+Connection
+Host name/address - off-the-trail.postgres.database.azure.com
+Port - 5432
+Maintenance database - postgres
+Username - amis3610@off-the-trail
+Password - mKJc7vbH8xfB# - (same as the one given in lab 10)
+Save password - check the box
+
+
+--Create Database Dialog--
+--you may not need to use this--
+Database - OFF_THE_TRAIL_main
+Owner - amis3610
+--------------------------------
+
+Connection information
+https://docs.microsoft.com/en-us/azure/postgresql/connect-csharp
+Azure-offthetrail.png in other-resources folder.
+
+--------------------------------
+
+Migrations Documentation:
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/

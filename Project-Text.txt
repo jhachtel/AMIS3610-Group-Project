@@ -1,0 +1,160 @@
+Gear
+
+1
+"Backpack"
+"Osprey Kestrel 28 Pack - 2018 - Men's"
+"https://www.rei.com/product/895641/osprey-kestrel-28-pack-2018-mens"
+"
+    Atilon framesheet spreads the load across the entire back panel to the peripheral frame
+    Tuckaway ice tool loop and bungee tie-offs; dual front-panel daisy chains; Stow-on-the-Go trekking pole attachment
+    Integrated raincover
+    Upper and lower reverse StraightJacket side compression straps
+    Dual stretch-mesh side pockets; zippered hipbelt pockets; top lid zippered pocket and under-lid zippered mesh pocket; front panel stretch-mesh pocket
+    Fixed lid provides top-loading access to the main compartment
+    External hydration sleeve (reservoir sold separately)
+"
+
+2
+"Backpack"
+" REI Co-op Trail 25 Pack - Men's "
+"https://www.rei.com/product/136585/rei-co-op-trail-25-pack-mens"
+"
+    Included raincover stows in its own zip pocket
+    U-shaped panel with 2 zipper sliders offers quick access to gear and total access when fully open
+    Padded, mesh-covered straps and back are cool and comfortable
+    Internal HDPE framesheet adds structure and helps shield your back from protruding gear
+    Side mesh pocket with elastic closure offers quick access
+    Outer pocket with soft lining can hold a phone or sunglasses
+    Top has a zip pocket on the underside for your keys and valuables
+    Special fasteners on the back hold pole tips down low and pole shafts up high
+    Pack has an inner sleeve for a hydration reservoir (reservoir sold separately)
+    Hipbelt can be removed; you can also add an REI Trail 2 Waistpack (sold separately) for more storage
+"
+
+3
+"Climbing"
+" Black Diamond Momentum Harness - Women's "
+"https://www.rei.com/product/126522/black-diamond-momentum-harness-womens"
+"
+    Pre-threaded waistbelt buckle provides a quick, secure fit and reduces error when you're tying in
+    Bullhorn-shaped waistbelt is built using dual-core construction for maximum comfort, especially on hanging belays
+    trakFIT adjustment allows easy customization of leg loops
+    Adjustable rear elastic riser sits close to your body
+    Haul loop and 4 pressure-molded gear loops hold draws, cams and belay devices
+    Women-specific rise sits higher on the torso than men's harnesses
+"
+
+4
+"Climbing"
+" BlueWater 7mm x 30 ft. Accessory Cord "
+"https://www.rei.com/product/118270/bluewater-7mm-x-30-ft-accessory-cord"
+
+5
+"Bag"
+" REI Co-op Big Haul 40 Duffel "
+"https://www.rei.com/product/118811/rei-co-op-big-haul-40-duffel"
+"
+    Rugged ripstop nylon upper combines with a tough ballistic nylon base for durability
+    Versatile carrying options—crossbody strap, removable duffel handles and stowable backpack straps
+    Side and end handles make it easy to grab and go
+    Innovative compression strap system helps compact large loads
+    Daisy chain has lots of lash points for easy gear storage
+    Easy-to-grab zipper pulls permit quick access
+    Internal mesh pockets add convenience and organization
+    Internal access name card makes sure your bag knows how to get home
+    This item meets carry-on size restrictions for most airlines (size not to exceed 45 linear inches when adding L+W+H; this is subject to change, so check with your airline)
+"
+
+People
+
+1
+"Lane Jacobson"
+"555-865-8795 or @ hikeordie@live.com"
+"Hiker of the Alps, I call myself the surfer of earth"
+
+2
+"Maribosa Schleep"
+"Massive foodie who loves to go try the exotic foods"
+
+3
+"Jack Sully"
+"4496-Spr@hotmail.com"
+
+4
+"Trisha Smith"
+"322-8569-9888"
+"Ive been to 25 countries so far! Shooting to see them all before I die"
+
+5
+"Frank Black"
+"This was my first time traveling abroad. My trip was increidble and I learned alot about myself."
+
+
+Place
+
+1
+"US"
+"Colorado"
+"Denver"
+"Garden of the Gods"
+"Miracle Hotel"
+
+2
+"Belgium"
+"Brussels"
+"Meiniger Hostel"
+"Belgian Waffles"
+
+3
+"Japan"
+"Tokyo"
+"Nori Nori Motel"
+"Akiabara"
+
+4
+"New Zealand"
+"Lord of the Rings Tour"
+
+5
+"Florida"
+"Orlando"
+"Disney World"
+
+Trail
+
+1
+"Devil's Peak"
+
+2
+"Pikes Peak"
+
+3
+"Borg trail"
+
+4
+"Hocking Hills"
+
+5
+"Apalacian Trail"
+
+Trip
+
+1
+"First trip to China!"
+
+2
+"Never go to France"
+"The smell alone made me decide to never go back....."
+
+3
+"WOW the elevation really gets you"
+"Here I was walking a trail from Grindlewald up one of the local trails and....."
+
+4
+"Grand Caynon"
+"Forgettable hole in the ground"
+
+5
+"I love Rome!"
+"Pizza here is by far better than anything ive ever had in my home country....."
+

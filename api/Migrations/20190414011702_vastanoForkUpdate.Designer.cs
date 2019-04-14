@@ -9,9 +9,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AMIS3610.GroupProject.Api.Migrations
 {
-    [DbContext(typeof(BookstoreContext))]
-    [Migration("20190406142841_identity")]
-    partial class identity
+    [DbContext(typeof(ProjectContext))]
+    [Migration("20190414011702_vastanoForkUpdate")]
+    partial class vastanoForkUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,40 +71,100 @@ namespace AMIS3610.GroupProject.Api.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Author", b =>
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Gear", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Brand");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Gear");
+                });
+
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.People", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Bio");
 
+                    b.Property<string>("Contactinfo");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
+                    b.ToTable("People");
                 });
 
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Book", b =>
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Place", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AuthorId");
+                    b.Property<string>("Description");
 
-                    b.Property<string>("ISBN");
+                    b.Property<string>("Location");
 
-                    b.Property<DateTime>("PublishDate");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Publisher");
-
-                    b.Property<string>("Title");
+                    b.Property<string>("Type");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.ToTable("Place");
+                });
 
-                    b.ToTable("Books");
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Trail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("placeId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("placeId");
+
+                    b.ToTable("Trail");
+                });
+
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Trip", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<int?>("GearId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("PeopleId");
+
+                    b.Property<int?>("PlaceId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GearId");
+
+                    b.HasIndex("PeopleId");
+
+                    b.HasIndex("PlaceId");
+
+                    b.ToTable("Trip");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -214,11 +274,26 @@ namespace AMIS3610.GroupProject.Api.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Book", b =>
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Trail", b =>
                 {
-                    b.HasOne("AMIS3610.GroupProject.Api.Models.Author", "Author")
-                        .WithMany("Titles")
-                        .HasForeignKey("AuthorId");
+                    b.HasOne("AMIS3610.GroupProject.Api.Models.Place", "place")
+                        .WithMany()
+                        .HasForeignKey("placeId");
+                });
+
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Trip", b =>
+                {
+                    b.HasOne("AMIS3610.GroupProject.Api.Models.Gear", "Gear")
+                        .WithMany()
+                        .HasForeignKey("GearId");
+
+                    b.HasOne("AMIS3610.GroupProject.Api.Models.People", "People")
+                        .WithMany()
+                        .HasForeignKey("PeopleId");
+
+                    b.HasOne("AMIS3610.GroupProject.Api.Models.Place", "Place")
+                        .WithMany()
+                        .HasForeignKey("PlaceId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
