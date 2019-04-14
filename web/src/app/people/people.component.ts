@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../gear';
-import { HeroService } from '../gear.service';
+import { Person } from '../people';
+import { PeopleService } from '../people.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-people',
+  templateUrl: './people.component.html',
+  styleUrls: ['./people.component.css']
 })
-export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+export class PeopleComponent implements OnInit {
+  people: Person[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getPeople();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+  getPeople(): void {
+    this.peopleService.getPeople()
+    .subscribe(people => this.people = people);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
+    this.peopleService.addPerson({ name } as Person)
+      .subscribe(person => {
+        this.people.push(person);
       });
   }
 
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+  delete(person: Person): void {
+    this.people = this.people.filter(p => p !== person);
+    this.peopleService.deletePerson(person).subscribe();
   }
 
 }

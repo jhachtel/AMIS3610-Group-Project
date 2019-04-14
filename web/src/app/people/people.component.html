@@ -1,21 +1,21 @@
-<h2>My Heroes</h2>
+<h2>My People</h2>
 
 <div>
-  <label>Hero name:
-    <input #heroName />
+  <label>Person name:
+    <input #personName />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button (click)="add(personName.value); personName.value=''">
     add
   </button>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+<ul class="people">
+  <li *ngFor="let person of people">
+    <a routerLink="/detail/{{person.id}}">
+      <span class="badge">{{person.id}}</span> {{person.name}}
     </a>
-    <button class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
+    <button class="delete" title="delete person"
+      (click)="delete(person)">x</button>
   </li>
 </ul>

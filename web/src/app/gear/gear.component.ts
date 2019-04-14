@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../gear';
-import { HeroService } from '../gear.service';
+import { Gear } from '../gear';
+import { GearService } from '../gear.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-gear',
+  templateUrl: './gear.component.html',
+  styleUrls: ['./gear.component.css']
 })
-export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+export class gearComponent implements OnInit {
+  gear: Gear[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private gearService: GearService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getGear();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+  getGear(): void {
+    this.gearService.getGear()
+    .subscribe(gear => this.gear = gear);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
+    this.gearService.addGear({ name } as Gear)
+      .subscribe(gear => {
+        this.gear.push(gear);
       });
   }
 
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+  delete(gear: Gear): void {
+    this.gear = this.gear.filter(g => g !== gear);
+    this.gearService.deleteGear(Gear).subscribe();
   }
 
 }
