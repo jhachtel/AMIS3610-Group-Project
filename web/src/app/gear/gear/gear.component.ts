@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Gear } from '../Gear';
+import { GearService } from '../gear.service';
 
 @Component({
   selector: 'app-gear',
@@ -8,16 +9,17 @@ import { Gear } from '../Gear';
 })
 export class GearComponent implements OnInit {
 
-  gear: Gear = {
-    id: 1,
-    name: 'Backpack',
-    weblink: 'google.com',
-    description: 'good shit mate'
-};
+  gear: Gear[];
 
-  constructor() { }
+  constructor(private gearService: GearService) { }
 
   ngOnInit() {
+    this.getGear();
+  }
+
+  getGear(): void {
+    this.gearService.getGear()
+    .subscribe(gear => this.gear = gear);
   }
 
 }
