@@ -21,7 +21,7 @@ export class GearService {
   constructor(private http: HttpClient) { }
 
   getGear() {
-    return this.http.get<Gear>(this.gearUri).pipe(
+    return this.http.get<Gear[]>(this.gearUri).pipe(
       tap(_ => console.log('fetched gear')),
       catchError(this.handleError<Gear[]>('getGear', []))
     );
