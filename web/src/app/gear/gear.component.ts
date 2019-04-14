@@ -33,7 +33,7 @@ export class GearComponent implements OnInit {
 
   delete(gear: Gear): void {
     this.gear = this.gear.filter(g => g !== gear);
-    this.gearService.deleteGear(Gear).subscribe();
+    this.gearService.deleteGear(gear.id).subscribe();
   }
 
 }
