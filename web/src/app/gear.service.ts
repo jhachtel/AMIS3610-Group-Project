@@ -25,7 +25,7 @@ export class GearService {
     return this.http.get<Gear[]>(this.gearUrl)
       .pipe(
         tap(_ => this.log('fetched gear')),
-        catchError(this.handleError('getGear', []))
+        catchError(this.handleError('getAllGear', []))
       );
   }
 

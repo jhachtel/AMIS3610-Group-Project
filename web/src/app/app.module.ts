@@ -21,8 +21,7 @@ import { MessageService }       from './message.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    MessageService
+    HttpClientModule
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
