@@ -10,9 +10,9 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
-import { HeroesComponent }      from './heroes/heroes.component';
-import { HeroSearchComponent }  from './gear-search/gear-search.component';
+import { GearDetailComponent }  from './gear-detail/gear-detail.component';
+import { GearComponent }      from './gear/gear.component';
+import { GearSearchComponent }  from './gear-search/gear-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 
 @NgModule({
@@ -32,10 +32,10 @@ import { MessagesComponent }    from './messages/messages.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroesComponent,
-    HeroDetailComponent,
+    GearComponent,
+    GearDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    GearSearchComponent
   ],
   bootstrap: [ AppComponent ]
 })

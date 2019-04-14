@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Hero } from './gear';
+import { Gear } from './gear';
 import { MessageService } from './message.service';
 
 const httpOptions = {
@@ -12,84 +12,84 @@ const httpOptions = {
 };
 
 @Injectable({ providedIn: 'root' })
-export class HeroService {
+export class GearService {
 
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private gearUrl = 'api/gear';  // URL to web api
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
+  /** GET gear from the server */
+  getAllGear(): Observable<Gear[]> {
+    return this.http.get<Gear[]>(this.gearUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError('getHeroes', []))
+        tap(_ => this.log('fetched gear')),
+        catchError(this.handleError('getGear', []))
       );
   }
 
-  /** GET hero by id. Return `undefined` when id not found */
-  getHeroNo404<Data>(id: number): Observable<Hero> {
-    const url = `${this.heroesUrl}/?id=${id}`;
-    return this.http.get<Hero[]>(url)
+  /** GET gear by id. Return `undefined` when id not found */
+  getGearNo404<Data>(id: number): Observable<Gear> {
+    const url = `${this.gearUrl}/?id=${id}`;
+    return this.http.get<Gear[]>(url)
       .pipe(
-        map(heroes => heroes[0]), // returns a {0|1} element array
-        tap(h => {
-          const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} hero id=${id}`);
+        map(gear => gear[0]), // returns a {0|1} element array
+        tap(g => {
+          const outcome = g ? `fetched` : `did not find`;
+          this.log(`${outcome} gear id=${id}`);
         }),
-        catchError(this.handleError<Hero>(`getHero id=${id}`))
+        catchError(this.handleError<Gear>(`getGear id=${id}`))
       );
   }
 
-  /** GET hero by id. Will 404 if id not found */
-  getHero(id: number): Observable<Hero> {
-    const url = `${this.heroesUrl}/${id}`;
-    return this.http.get<Hero>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${id}`)),
-      catchError(this.handleError<Hero>(`getHero id=${id}`))
+  /** GET gear by id. Will 404 if id not found */
+  getGear(id: number): Observable<Gear> {
+    const url = `${this.gearUrl}/${id}`;
+    return this.http.get<Gear>(url).pipe(
+      tap(_ => this.log(`fetched gear id=${id}`)),
+      catchError(this.handleError<Gear>(`getGear id=${id}`))
     );
   }
 
-  /* GET heroes whose name contains search term */
-  searchHeroes(term: string): Observable<Hero[]> {
+  /* GET gear whose name contains search term */
+  searchGear(term: string): Observable<Gear[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-      tap(_ => this.log(`found heroes matching "${term}"`)),
-      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    return this.http.get<Gear[]>(`${this.gearUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found gear matching "${term}"`)),
+      catchError(this.handleError<Gear[]>('searchGear', []))
     );
   }
 
   //////// Save methods //////////
 
-  /** POST: add a new hero to the server */
-  addHero (hero: Hero): Observable<Hero> {
-    return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
-      catchError(this.handleError<Hero>('addHero'))
+  /** POST: add new gear to the server */
+  addGear (gear: Gear): Observable<Gear> {
+    return this.http.post<Gear>(this.gearUrl, gear, httpOptions).pipe(
+      tap((newGear: Gear) => this.log(`added gear w/ id=${newGear.id}`)),
+      catchError(this.handleError<Gear>('addGear'))
     );
   }
 
-  /** DELETE: delete the hero from the server */
-  deleteHero (hero: Hero | number): Observable<Hero> {
-    const id = typeof hero === 'number' ? hero : hero.id;
-    const url = `${this.heroesUrl}/${id}`;
+  /** DELETE: delete the gear from the server */
+  deleteGear (gear: Gear | number): Observable<Gear> {
+    const id = typeof gear === 'number' ? gear : gear.id;
+    const url = `${this.gearUrl}/${id}`;
 
-    return this.http.delete<Hero>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted hero id=${id}`)),
-      catchError(this.handleError<Hero>('deleteHero'))
+    return this.http.delete<Gear>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted gear id=${id}`)),
+      catchError(this.handleError<Gear>('deleteGear'))
     );
   }
 
-  /** PUT: update the hero on the server */
-  updateHero (hero: Hero): Observable<any> {
-    return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${hero.id}`)),
-      catchError(this.handleError<any>('updateHero'))
+  /** PUT: update the gear on the server */
+  updateGear (gear: Gear): Observable<any> {
+    return this.http.put(this.gearUrl, gear, httpOptions).pipe(
+      tap(_ => this.log(`updated gear id=${gear.id}`)),
+      catchError(this.handleError<any>('updateGear'))
     );
   }
 
@@ -113,8 +113,8 @@ export class HeroService {
     };
   }
 
-  /** Log a HeroService message with the MessageService */
+  /** Log a GearService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`GearService: ${message}`);
   }
 }

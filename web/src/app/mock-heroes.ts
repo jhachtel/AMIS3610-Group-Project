@@ -1,14 +1,14 @@
-import { Hero } from './gear';
+import { Gear } from './gear';
 
-export const HEROES: Hero[] = [
-    { id: 11, name: 'Mr. Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celebritas' },
-    { id: 15, name: 'Magenta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
+export const GEAR: Gear[] = [
+    { id: 11, name: 'Mr. Nice', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 12, name: 'Narco', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 13, name: 'Bombasto', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 14, name: 'Celebritas', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 15, name: 'Magenta', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 16, name: 'RubberMan', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 17, name: 'Dynama', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 18, name: 'Dr IQ', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 19, name: 'Magma', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' },
+    { id: 20, name: 'Tornado', type: 'Hero', description: 'Notsupposed to be here anymore', brand: 'Walmart' }
 ];

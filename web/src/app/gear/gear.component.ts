@@ -8,7 +8,7 @@ import { GearService } from '../gear.service';
   templateUrl: './gear.component.html',
   styleUrls: ['./gear.component.css']
 })
-export class gearComponent implements OnInit {
+export class GearComponent implements OnInit {
   gear: Gear[];
 
   constructor(private gearService: GearService) { }

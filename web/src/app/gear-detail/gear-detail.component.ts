@@ -15,7 +15,7 @@ export class GearDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: GearService,
+    private gearService: GearService,
     private location: Location
   ) {}
 
