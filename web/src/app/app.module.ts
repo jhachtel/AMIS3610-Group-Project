@@ -3,18 +3,16 @@ import { BrowserModule }      from '@angular/platform-browser';
 import { FormsModule }        from '@angular/forms';
 import { HttpClientModule }   from '@angular/common/http';
 
-// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService }  from './in-memory-data.service';
-
-import { AppRoutingModule }     from './app-routing.module';
-import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { GearDetailComponent }  from './gear-detail/gear-detail.component';
-import { GearComponent }        from './gear/gear.component';
-import { GearSearchComponent }  from './gear-search/gear-search.component';
-import { MessagesComponent }    from './messages/messages.component';
-import { NavbarComponent }      from './navbar/navbar.component';
-import { MessageService }       from './message.service';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { LocationsComponent } from './locations/locations/locations.component';
+import { ActivitiesComponent } from './activities/activities/activities.component';
+import { GearComponent } from './gear/gear/gear.component';
+import { PeopleComponent } from './people/people/people.component';
+import { PlacesComponent } from './places/places/places.component';
+import { TrailsComponent } from './trails/trails/trails.component';
+import { TripsComponent } from './trips/trips/trips.component';
 
 @NgModule({
   imports: [
@@ -32,6 +30,18 @@ import { MessageService }       from './message.service';
   ],
   declarations: [
     AppComponent,
+    HomeComponent,
+    LocationsComponent,
+    ActivitiesComponent,
+    GearComponent,
+    PeopleComponent,
+    PlacesComponent,
+    TrailsComponent,
+    TripsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
     DashboardComponent,
     GearComponent,
     GearDetailComponent,
