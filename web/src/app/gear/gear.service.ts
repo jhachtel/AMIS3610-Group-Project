@@ -23,7 +23,7 @@ export class GearService {
   getGear() {
     return this.http.get<Gear>(this.gearUri).pipe(
       tap(_ => console.log('fetched gear')),
-      catchError(this.handleError<Gear>('getGear')) // Removed the [] - Not sure what to do with it.
+      catchError(this.handleError<Gear[]>('getGear', []))
     );
   }
 }
