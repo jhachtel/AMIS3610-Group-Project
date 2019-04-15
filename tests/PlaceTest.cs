@@ -19,7 +19,8 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Name = "Envoy Hotel Tiblisi",
                     Location = "Tiblisi, Georgia",
                     Type = "Hotel",
-                    Description = "Enjoy breathtaking views of Tibilisi from our huge roof top terrace. Step outside and you are smack in the middle of the Old Town area. This is the place to be! Perfectly located, Envoy delivers more than just a bed to sleep in. Sharing your passion for travel, everything has been designed with the modern traveller in mind. Relax in our clean and modern rooms. Meet like-minded travellers in our common room decorated with quirky and fun detail. Enjoy our facilities and services including our new kitchen, Discount on tours, Free WiFi, tasty Free breakfast, Free luggage storage and much more."
+                    Description = "Enjoy breathtaking views of Tibilisi from our huge roof top terrace. Step outside and you are smack in the middle of the Old Town area. This is the place to be! Perfectly located, Envoy delivers more than just a bed to sleep in. Sharing your passion for travel, everything has been designed with the modern traveller in mind. Relax in our clean and modern rooms. Meet like-minded travellers in our common room decorated with quirky and fun detail. Enjoy our facilities and services including our new kitchen, Discount on tours, Free WiFi, tasty Free breakfast, Free luggage storage and much more.",
+                    Link = "https://www.envoyhostel.org/tbilisi/tbilisi-rooms-rates/"
                 };
 
             var newId = 999999999;
@@ -51,7 +52,12 @@ namespace AMIS3610.GroupProject.Api.Tests
             var expectedDescription = newDescription;
             var actualDescription = Place.Description;
             Assert.Equal(expectedDescription, actualDescription);
-
+            
+            var newLink = "https://www.envoyhostel.com/tbilisi/tbilisi-rooms-rates/";
+            Place.ChangeLink(newLink);
+            var expectedLink = newLink;
+            var actualLink = Place.Link;
+            Assert.Equal(expectedLink, actualLink);
         }
     }
 }

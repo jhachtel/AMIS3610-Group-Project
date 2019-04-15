@@ -19,7 +19,8 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Name = "SINE 34",
                     Brand = "Kelti",
                     Type = "Blanket",
-                    Description = "Kelties got your back during your next chilly night in the backcountry. With the Sine 35° DriDown™ Sleeping Bag, you get the best of both worlds of comfort and light on weight. The Arc Zipper System is there to provide a natural arm motion when opening the bag and for dual venting. Including the water-resistant 800 fill DriDown™ stays drier, lofts better, and dries faster. Part of the Built for Women collection, this Sine sleeping bag has added down for added warmth. On warmer nights, leave unzipped and use like a blanket. No more bags under the eyes while using the Kelty Built Sine Sleeping Bag on your next adventure!"
+                    Description = "Kelties got your back during your next chilly night in the backcountry. With the Sine 35° DriDown™ Sleeping Bag, you get the best of both worlds of comfort and light on weight. The Arc Zipper System is there to provide a natural arm motion when opening the bag and for dual venting. Including the water-resistant 800 fill DriDown™ stays drier, lofts better, and dries faster. Part of the Built for Women collection, this Sine sleeping bag has added down for added warmth. On warmer nights, leave unzipped and use like a blanket. No more bags under the eyes while using the Kelty Built Sine Sleeping Bag on your next adventure!",
+                    Link = "https://www.re1.com/product/113901/kelty-sine-20-sleeping-bag"
                 };
 
             var newId = 999999999;
@@ -51,7 +52,12 @@ namespace AMIS3610.GroupProject.Api.Tests
             var expectedDescription = newDescription;
             var actualDescription = Gear.Description;
             Assert.Equal(expectedDescription, actualDescription);
-
+            
+            var newLink = "https://www.rei.com/product/113901/kelty-sine-20-sleeping-bag";
+            Gear.ChangeLink(newLink);
+            var expectedLink = newLink;
+            var actualLink = Gear.Link;
+            Assert.Equal(expectedLink, actualLink);
         }
     }
 }
