@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AMIS3610.GroupProject.Api.Controllers
 {
-    [Route("api/Person")]
+    [Route("api/person")]
     [ApiController]
     public class PersonController : ControllerBase
     {

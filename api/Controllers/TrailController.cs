@@ -21,7 +21,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     {
                         Id = 1,
                         Name = "Test Trail 1",
-                        Place = null,
+                        //Place = null,
                         Description = "The first test Trail.",
                         Link = "https://www.google.com"
                     });
@@ -29,7 +29,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     {
                         Id = 2,
                         Name = "Test Trail 2",
-                        Place = null,
+                        //Place = null,
                         Description = "The second test Trail.",
                         Link = "https://www.google.com"
                     });
@@ -37,7 +37,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     {
                         Id = 3,
                         Name = "Test Trail 3",
-                        Place = null,
+                        //Place = null,
                         Description = "The third test Trail.",
                         Link = "https://www.google.com"
                     });
@@ -94,7 +94,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
             }
 
             TrailToEdit.Name = Trail.Name;
-            TrailToEdit.Place = Trail.Place;
+            //TrailToEdit.Place = Trail.Place;
             TrailToEdit.Description = Trail.Description;
             TrailToEdit.Link = Trail.Link;
 

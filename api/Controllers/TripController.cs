@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AMIS3610.GroupProject.Api.Controllers
 {
-    [Route("api/Trip")]
+    [Route("api/trip")]
     [ApiController]
     public class TripController : ControllerBase
     {
@@ -21,31 +21,31 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     {
                         Id = 1,
                         Name="Trail 1",
-                        Description = "Super cool Trail 1.",
-                        Companions = null,
-                        GearList = null,
-                        Places = null,
-                        Trails = null
+                        Description = "Super cool Trail 1."//,
+                        // Companions = null,
+                        // GearList = null,
+                        // Places = null,
+                        // Trails = null
                     });
                     this.db.Trip.Add(new Trip()
                     {
                         Id = 1,
                         Name="Trail 2",
-                        Description = "Super cool Trail 2.",
-                        Companions = null,
-                        GearList = null,
-                        Places = null,
-                        Trails = null
+                        Description = "Super cool Trail 2."//,
+                        // Companions = null,
+                        // GearList = null,
+                        // Places = null,
+                        // Trails = null
                     });
                     this.db.Trip.Add(new Trip()
                     {
                         Id = 1,
                         Name="Trail 3",
-                        Description = "Super cool Trail 3.",
-                        Companions = null,
-                        GearList = null,
-                        Places = null,
-                        Trails = null
+                        Description = "Super cool Trail 3."//,
+                        // Companions = null,
+                        // GearList = null,
+                        // Places = null,
+                        // Trails = null
                     });
                 }
                 this.db.SaveChanges();
@@ -100,10 +100,10 @@ namespace AMIS3610.GroupProject.Api.Controllers
 
             TripToEdit.Name = Trip.Name;
             TripToEdit.Description = Trip.Description;
-            TripToEdit.Companions = Trip.Companions;
-            TripToEdit.GearList = Trip.GearList;
-            TripToEdit.Places = Trip.Places;
-            TripToEdit.Trails = Trip.Trails;
+            // TripToEdit.Companions = Trip.Companions;
+            // TripToEdit.GearList = Trip.GearList;
+            // TripToEdit.Places = Trip.Places;
+            // TripToEdit.Trails = Trip.Trails;
 
             db.Trip.Update(TripToEdit);
             db.SaveChanges();

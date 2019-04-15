@@ -10,27 +10,27 @@ namespace AMIS3610.GroupProject.Api.Models
         public string   Email { get; set; }
         public string   Bio { get; set; }
 
-        public List<Person> Friends { get; set; }
-        public List<Gear>   Gear { get; set; }
-        public List<Place>  Places { get; set; }
-        public List<Trail>  Trails { get; set; }
-        public List<Trip>   Trips { get; set; }
+        // public List<Person> Friends { get; set; }
+        // public List<Gear>   Gear { get; set; }
+        // public List<Place>  Places { get; set; }
+        // public List<Trail>  Trails { get; set; }
+        // public List<Trip>   Trips { get; set; }
 
-        public void ChangeId(int newId) => this.Id = newId;
-        public void ChangeName(string newName) => this.Name = newName;
-        public void ChangeEmail(string newEmail) => this.Email = newEmail;
-        public void ChangeBio(string newBio) => this.Bio = newBio;
+        // public void ChangeId(int newId) => this.Id = newId;
+        // public void ChangeName(string newName) => this.Name = newName;
+        // public void ChangeEmail(string newEmail) => this.Email = newEmail;
+        // public void ChangeBio(string newBio) => this.Bio = newBio;
 
-        public void AssociatePerson(Person person) => this.Friends.Add(person);
-        public void AssociateGear(Gear gear) => this.Gear.Add(gear);
-        public void AssociatePlace(Place place) => this.Places.Add(place);
-        public void AssociateTrail(Trail trail) => this.Trails.Add(trail);
-        public void AssociateTrip(Trip trip) => this.Trips.Add(trip);
+        // public void AssociatePerson(Person p) => Friends.Add(p);
+        // public void AssociateGear(Gear g) => Gear.Add(g);
+        // public void AssociatePlace(Place pl) => Places.Add(pl);
+        // public void AssociateTrail(Trail tl) => Trails.Add(tl);
+        // public void AssociateTrip(Trip tp) => Trips.Add(tp);
         
-        public void DisassociatePerson(Person person) => this.Friends.Remove(person);
-        public void DisassociateGear(Gear gear) => this.Gear.Remove(gear);
-        public void DisassociatePlace(Place place) => this.Places.Remove(place);
-        public void DisassociateTrail(Trail trail) => this.Trails.Remove(trail);
-        public void DisassociateTrip(Trip trip) => this.Trips.Remove(trip);
+        // public void DisassociatePerson(Person pn) => Friends.Remove(pn);
+        // public void DisassociateGear(Gear gr) => Gear.Remove(gr);
+        // public void DisassociatePlace(Place plc) => Places.Remove(plc);
+        // public void DisassociateTrail(Trail tr) => Trails.Remove(tr);
+        // public void DisassociateTrip(Trip t) => Trips.Remove(t);
     }
 }
