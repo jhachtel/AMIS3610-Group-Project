@@ -1,2 +1,4 @@
 obj/
 bin/
+
+api/appsettings.json
