@@ -13,7 +13,7 @@ namespace AMIS3610.GroupProject.Api.Tests
         [Fact]
         public void ChangeAttributes()
         {
-            var OldPlace = new Place()
+            var oldPlace = new Place()
                 {
                     Id = 999999900,
                     Name = "Old Place",
@@ -23,7 +23,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.merriam-webster.com/dictionary/place"
                 };
 
-            var NewPlace = new Place()
+            var newPlace = new Place()
                 {
                     Id = 999999901,
                     Name = "New Place",
@@ -33,7 +33,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.thesaurus.com/browse/place"
                 };
 
-            var OldGear = new Gear()
+            var oldGear = new Gear()
                 {
                     Id = 999999902,
                     Name = "Old Gear",
@@ -43,7 +43,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.merriam-webster.com/dictionary/gear"
                 };
 
-            var NewGear = new Gear()
+            var newGear = new Gear()
                 {
                     Id = 999999903,
                     Name = "New Gear",
@@ -53,7 +53,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.thesaurus.com/browse/gear"
                 };
 
-            var OldFriend = new Person()
+            var oldFriend = new Person()
                 {
                     Id = 999999904,
                     Name = "Old Friend",
@@ -66,7 +66,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Trips = null
                 };
 
-            var NewFriend = new Person()
+            var newFriend = new Person()
                 {
                     Id = 999999905,
                     Name = "New Friend",
@@ -79,7 +79,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Trips = null
                 };
 
-            var OldTrail = new Trail()
+            var oldTrail = new Trail()
                 {
                     Id = 999999906,
                     Name = "Old Trail",
@@ -88,7 +88,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.merriam-webster.com/dictionary/description"
                 };
 
-            var NewTrail = new Trail()
+            var newTrail = new Trail()
                 {
                     Id = 999999907,
                     Name = "New Trail",
@@ -97,21 +97,21 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.thesaurus.com/browse/description"
                 };
 
-            var OldTrip = new Trip()
+            var oldTrip = new Trip()
                 {
                     Id = 999999908,
                     Name = "Old Trip",
                     Description = "Old Description"
                 };
 
-            var NewTrip = new Trip()
+            var newTrip = new Trip()
                 {
                     Id = 999999909,
                     Name = "New Trip",
                     Description = "New Description."
                 };
 
-            var PersonToTest = new Person()
+            var personToTest = new Person()
                 {
                     Id = 999999910,
                     Name = "Person to Test",
@@ -124,80 +124,80 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Trips = null
                 };
             
-            PersonToTest.AssociatePerson(OldFriend);
-            PersonToTest.AssociateGear(OldGear);
-            PersonToTest.AssociatePlace(OldPlace);
-            PersonToTest.AssociateTrail(OldTrail);
-            PersonToTest.AssociateTrip(OldTrip);
+            personToTest.AssociatePerson(oldFriend);
+            personToTest.AssociateGear(oldGear);
+            personToTest.AssociatePlace(oldPlace);
+            personToTest.AssociateTrail(oldTrail);
+            personToTest.AssociateTrip(oldTrip);
 
             //Tests...
             var newId = 999999911;
-            PersonToTest.ChangeId(newId);
+            personToTest.ChangeId(newId);
             var expectedId = newId;
-            var actualId = PersonToTest.Id;
+            var actualId = personToTest.Id;
             Assert.Equal(expectedId, actualId);
             
             var newName = "New Name";
-            PersonToTest.ChangeName(newName);
+            personToTest.ChangeName(newName);
             var expectedName = newName;
-            var actualName = PersonToTest.Name;
+            var actualName = personToTest.Name;
             Assert.Equal(expectedName, actualName);
             
             var newEmail = "new@email.com";
-            PersonToTest.ChangeEmail(newEmail);
+            personToTest.ChangeEmail(newEmail);
             var expectedEmail = newEmail;
-            var actualEmail = PersonToTest.Email;
+            var actualEmail = personToTest.Email;
             Assert.Equal(expectedEmail, actualEmail);
 
             var newBio = "New Bio";
-            PersonToTest.ChangeBio(newBio);
+            personToTest.ChangeBio(newBio);
             var expectedBio = newBio;
-            var actualBio = PersonToTest.Bio;
+            var actualBio = personToTest.Bio;
             Assert.Equal(expectedBio, actualBio);
             
-            var newPlace = NewPlace;
-            var expectedPlace = newPlace;
-            PersonToTest.AssociatePlace(newPlace);
-            Assert.True(PersonToTest.Places.Contains(newPlace));
-            PersonToTest.DisassociatePlace(OldPlace);
-            Assert.False(PersonToTest.Places.Contains(OldPlace));
-            var actualPlace = PersonToTest.Places[0];
+            var place = newPlace;
+            var expectedPlace = place;
+            personToTest.AssociatePlace(place);
+            Assert.True(personToTest.Places.Contains(place));
+            personToTest.DisassociatePlace(oldPlace);
+            Assert.False(personToTest.Places.Contains(oldPlace));
+            var actualPlace = personToTest.Places[0];
             Assert.Same(expectedPlace, actualPlace);
             
-            var newGear = NewGear;
-            var expectedGear = newGear;
-            OldFriend.AssociateGear(newGear);
-            Assert.True(PersonToTest.Gear.Contains(newGear));
-            OldFriend.DisassociateGear(OldGear);
-            Assert.False(PersonToTest.Gear.Contains(OldGear));
-            var actualGear = PersonToTest.Gear[0];
+            var gear = newGear;
+            var expectedGear = gear;
+            oldFriend.AssociateGear(gear);
+            Assert.True(personToTest.Gear.Contains(gear));
+            oldFriend.DisassociateGear(oldGear);
+            Assert.False(personToTest.Gear.Contains(oldGear));
+            var actualGear = personToTest.Gear[0];
             Assert.Same(expectedGear, actualGear);
             
-            var newFriend = NewFriend;
-            var expectedFriend = newFriend;
-            PersonToTest.AssociatePerson(newFriend);
-            Assert.True(PersonToTest.Friends.Contains(newFriend));
-            PersonToTest.DisassociatePerson(OldFriend);
-            Assert.False(PersonToTest.Friends.Contains(OldFriend));
-            var actualFriend = PersonToTest.Friends[0];
+            var friend = newFriend;
+            var expectedFriend = friend;
+            personToTest.AssociatePerson(friend);
+            Assert.True(personToTest.Friends.Contains(friend));
+            personToTest.DisassociatePerson(oldFriend);
+            Assert.False(personToTest.Friends.Contains(oldFriend));
+            var actualFriend = personToTest.Friends[0];
             Assert.Same(expectedFriend, actualFriend);
             
-            var newTrail = NewTrail;
-            var expectedTrail = newTrail;
-            PersonToTest.AssociateTrail(newTrail);
-            Assert.True(PersonToTest.Trails.Contains(newTrail));
-            PersonToTest.DisassociateTrail(OldTrail);
-            Assert.False(PersonToTest.Trails.Contains(OldTrail));
-            var actualTrail = PersonToTest.Trails[0];
+            var trail = newTrail;
+            var expectedTrail = trail;
+            personToTest.AssociateTrail(trail);
+            Assert.True(personToTest.Trails.Contains(trail));
+            personToTest.DisassociateTrail(oldTrail);
+            Assert.False(personToTest.Trails.Contains(oldTrail));
+            var actualTrail = personToTest.Trails[0];
             Assert.Same(expectedTrail, actualTrail);
             
-            var newTrip = NewTrip;
-            var expectedTrip = newTrip;
-            PersonToTest.AssociateTrip(newTrip);
-            Assert.True(PersonToTest.Trips.Contains(newTrip));
-            PersonToTest.DisassociateTrip(OldTrip);
-            Assert.False(PersonToTest.Trips.Contains(OldTrip));
-            var actualTrip = PersonToTest.Trips[0];
+            var trip = newTrip;
+            var expectedTrip = trip;
+            personToTest.AssociateTrip(trip);
+            Assert.True(personToTest.Trips.Contains(trip));
+            personToTest.DisassociateTrip(oldTrip);
+            Assert.False(personToTest.Trips.Contains(oldTrip));
+            var actualTrip = personToTest.Trips[0];
             Assert.Same(expectedTrip, actualTrip);
 
         }
