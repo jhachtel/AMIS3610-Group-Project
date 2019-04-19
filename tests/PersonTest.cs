@@ -13,52 +13,52 @@ namespace AMIS3610.GroupProject.Api.Tests
         [Fact]
         public void ChangeAttributes()
         {
-            var oldPlace = new Place()
+            var OldPlace = new Place()
                 {
-                    Id = 999999998,
-                    Name = "Envoy Hotel Tblisi",
-                    Location = "Tblisi, Georgia",
-                    Type = "Hostel",
-                    Description = "Enjoy breathtaking views of Tbilisi from our huge roof top terrace. Step outside and you are smack in the middle of the Old Town area. This is the place to be! Perfectly located, Envoy delivers more than just a bed to sleep in. Sharing your passion for travel, everything has been designed with the modern traveller in mind. Relax in our clean and modern rooms. Meet like-minded travellers in our common room decorated with quirky and fun detail. Enjoy our facilities and services including our new kitchen, Discount on tours, Free WiFi, tasty Free breakfast, Free luggage storage and much more.",
-                    Link = "https://www.envoyhostel.com/tbilisi/tbilisi-rooms-rates/"
+                    Id = 999999900,
+                    Name = "Old Place",
+                    Location = "Old Location",
+                    Type = "Old Type",
+                    Description = "Old Description.",
+                    Link = "https://www.merriam-webster.com/dictionary/place"
                 };
 
             var NewPlace = new Place()
                 {
-                    Id = 999999998,
-                    Name = "The Biltmore Hotel Tbilisi",
-                    Location = "Tblisi, Georgia",
-                    Type = "Hotel",
-                    Description = "The Biltmore Hotel Tbilisi is the first glass skyscraper in Georgia and the highest hotel in the Caucasus Region. Offering astonishing views, it is ideally situated within the historical and cultural district of Georgia’s capital city. The grand lobby showcasing polished marble floors, crystal chandeliers and enduring pillars, echoes the nostalgia of a bygone era and resonates the glamour and prestige of the social elite and transports guests into an envelope of luxury, unseen or experienced by others before.",
-                    Link = "https://www.millenniumhotels.com/en/tbilisi/the-biltmore-hotel-tbilisi/"
+                    Id = 999999901,
+                    Name = "New Place",
+                    Location = "New Location",
+                    Type = "New Type",
+                    Description = "New Description.",
+                    Link = "https://www.thesaurus.com/browse/place"
                 };
 
-            var oldGear = new Gear()
+            var OldGear = new Gear()
                 {
-                    Id = 999999998,
-                    Name = "SINE 35",
-                    Brand = "Kelty",
-                    Type = "Sleeping Bag",
-                    Description = "Kelty's got your back during your next chilly night in the backcountry. With the Sine 35° DriDown™ Sleeping Bag, you get the best of both worlds of comfort and light on weight. The Arc Zipper System is there to provide a natural arm motion when opening the bag and for dual venting. Including the water-resistant 800 fill DriDown™ stays drier, lofts better, and dries faster. Part of the Built for Women collection, this Sine sleeping bag has added down for added warmth. On warmer nights, leave unzipped and use like a blanket. No more bags under the eyes while using the Kelty Built Sine Sleeping Bag on your next adventure!",
-                    Link = "https://www.rei.com/product/113901/kelty-sine-20-sleeping-bag"
+                    Id = 999999902,
+                    Name = "Old Gear",
+                    Brand = "Old Brand",
+                    Type = "Old Type",
+                    Description = "Old Description.",
+                    Link = "https://www.merriam-webster.com/dictionary/gear"
                 };
 
             var NewGear = new Gear()
                 {
-                    Id = 999999999,
-                    Name = "Crew 11 22-inch Expandable Rollaboard Suiter",
-                    Brand = "TravelPro",
-                    Type = "Carry-On Luggage",
-                    Description = "The civilian version of the original Travelpro® Rollaboard® that airline pilots and flight crews have depended on for decades. Proven and durable carry-on luggage perfect for quick trips with features to keep suits and dresses wrinkle free. Packed with smart features like a dedicated power bank pocket and external USB power port to help pro travelers go the extra 20,000 miles.",
-                    Link = "https://www.travelpro.com/crew-11-22-expandable-rollaboard-suiter-4071622"
+                    Id = 999999903,
+                    Name = "New Gear",
+                    Brand = "New Brand",
+                    Type = "New Type",
+                    Description = "New Description.",
+                    Link = "https://www.thesaurus.com/browse/gear"
                 };
 
-            var oldFriend = new Person()
+            var OldFriend = new Person()
                 {
-                    Id = 999999998,
-                    Name = "Sum Yung Pozer",
-                    Email = "sumyungpozer@pozers.com",
-                    Bio = "Really great hiker",
+                    Id = 999999904,
+                    Name = "Old Friend",
+                    Email = "old@email.com",
+                    Bio = "Old Bio",
                     Friends = null,
                     Gear = null,
                     Places = null,
@@ -68,10 +68,10 @@ namespace AMIS3610.GroupProject.Api.Tests
 
             var NewFriend = new Person()
                 {
-                    Id = 999999993,
-                    Name = "Travis Lerr",
-                    Email = "t.lerr@gofar-ish.com",
-                    Bio = "Loves travel with money to burn. Tells people he's backpacking.",
+                    Id = 999999905,
+                    Name = "New Friend",
+                    Email = "old@email.com",
+                    Bio = "Old Bio",
                     Friends = null,
                     Gear = null,
                     Places = null,
@@ -79,44 +79,44 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Trips = null
                 };
 
-            var oldTrail = new Trail()
+            var OldTrail = new Trail()
                 {
-                    Id = 999999998,
-                    Name = "Sand Point Marsh Trail",
-                    Place = oldPlace,
-                    Description = "Length: 0.5 mile loop. Look for wildlife along this boardwalk trail leading through a beautiful wetland. Entrance located across from Sand Point Beach. The trail is disability accessible.",
-                    Link = "https://www.nps.gov/piro/planyourvisit/dayhikes.htm"
+                    Id = 999999906,
+                    Name = "Old Trail",
+                    Place = null,
+                    Description = "Old Description.",
+                    Link = "https://www.merriam-webster.com/dictionary/description"
                 };
 
             var NewTrail = new Trail()
                 {
-                    Id = 999999999,
-                    Name = "A Brand new Trail",
-                    Place = NewPlace,
-                    Description = "A brand new one we know precious little about.",
-                    Link = "https://www.google.com"
+                    Id = 999999907,
+                    Name = "New Trail",
+                    Place = null,
+                    Description = "New Description.",
+                    Link = "https://www.thesaurus.com/browse/description"
                 };
 
-            var oldTrip = new Trip()
+            var OldTrip = new Trip()
                 {
-                    Id = 999999998,
-                    Name = "Tibilisi Trip",
-                    Description = "Went ot see the old cathedral"
+                    Id = 999999908,
+                    Name = "Old Trip",
+                    Description = "Old Description"
                 };
 
             var NewTrip = new Trip()
                 {
-                    Id = 999999999,
-                    Name = "New Trip we're planning",
-                    Description = "Just want to do something fun."
+                    Id = 999999909,
+                    Name = "New Trip",
+                    Description = "New Description."
                 };
 
             var PersonToTest = new Person()
                 {
-                    Id = 999999999,
-                    Name = "Sum Yung Poser",
-                    Email = "sumyungpozer@posers.com",
-                    Bio = "Really grate hicker",
+                    Id = 999999910,
+                    Name = "Person to Test",
+                    Email = "persontotest@email.com",
+                    Bio = "Test Bio",
                     Friends = null,
                     Gear = null,
                     Places = null,
@@ -124,32 +124,32 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Trips = null
                 };
             
-            PersonToTest.AssociatePerson(oldFriend);
-            PersonToTest.AssociateGear(oldGear);
-            PersonToTest.AssociatePlace(oldPlace);
-            PersonToTest.AssociateTrail(oldTrail);
-            PersonToTest.AssociateTrip(oldTrip);
+            PersonToTest.AssociatePerson(OldFriend);
+            PersonToTest.AssociateGear(OldGear);
+            PersonToTest.AssociatePlace(OldPlace);
+            PersonToTest.AssociateTrail(OldTrail);
+            PersonToTest.AssociateTrip(OldTrip);
 
             //Tests...
-            var newId = 999999999;
+            var newId = 999999911;
             PersonToTest.ChangeId(newId);
             var expectedId = newId;
             var actualId = PersonToTest.Id;
             Assert.Equal(expectedId, actualId);
             
-            var newName = "Sum Yung Pozer";
+            var newName = "New Name";
             PersonToTest.ChangeName(newName);
             var expectedName = newName;
             var actualName = PersonToTest.Name;
             Assert.Equal(expectedName, actualName);
             
-            var newEmail = "sumyungpozer@pozers.com";
+            var newEmail = "new@email.com";
             PersonToTest.ChangeEmail(newEmail);
             var expectedEmail = newEmail;
             var actualEmail = PersonToTest.Email;
             Assert.Equal(expectedEmail, actualEmail);
 
-            var newBio = "Really great hiker";
+            var newBio = "New Bio";
             PersonToTest.ChangeBio(newBio);
             var expectedBio = newBio;
             var actualBio = PersonToTest.Bio;
@@ -159,45 +159,45 @@ namespace AMIS3610.GroupProject.Api.Tests
             var expectedPlace = newPlace;
             PersonToTest.AssociatePlace(newPlace);
             Assert.True(PersonToTest.Places.Contains(newPlace));
-            PersonToTest.DisassociatePlace(oldPlace);
-            Assert.False(PersonToTest.Places.Contains(oldPlace));
+            PersonToTest.DisassociatePlace(OldPlace);
+            Assert.False(PersonToTest.Places.Contains(OldPlace));
             var actualPlace = PersonToTest.Places[0];
             Assert.Same(expectedPlace, actualPlace);
             
             var newGear = NewGear;
             var expectedGear = newGear;
-            somePerson.AssociateGear(newGear);
-            Assert.True(Person.Gear.Contains(newGear));
-            somePerson.DisassociateGear(Gear);
-            Assert.False(Person.Gear.Contains(Gear));
-            var actualGear = Person.Gear[0];
+            OldFriend.AssociateGear(newGear);
+            Assert.True(PersonToTest.Gear.Contains(newGear));
+            OldFriend.DisassociateGear(OldGear);
+            Assert.False(PersonToTest.Gear.Contains(OldGear));
+            var actualGear = PersonToTest.Gear[0];
             Assert.Same(expectedGear, actualGear);
             
             var newFriend = NewFriend;
             var expectedFriend = newFriend;
-            Person.AssociatePerson(newFriend);
-            Assert.True(Person.Friends.Contains(newFriend));
-            Person.DisassociatePerson(Friend1);
-            Assert.False(Person.Friends.Contains(Friend1));
-            var actualFriend = Person.Friends[0];
+            PersonToTest.AssociatePerson(newFriend);
+            Assert.True(PersonToTest.Friends.Contains(newFriend));
+            PersonToTest.DisassociatePerson(OldFriend);
+            Assert.False(PersonToTest.Friends.Contains(OldFriend));
+            var actualFriend = PersonToTest.Friends[0];
             Assert.Same(expectedFriend, actualFriend);
             
             var newTrail = NewTrail;
             var expectedTrail = newTrail;
-            Person.AssociateTrail(newTrail);
-            Assert.True(Person.Trails.Contains(newTrail));
-            Person.DisassociateTrail(Trail);
-            Assert.False(Person.Trails.Contains(Trail));
-            var actualTrail = Person.Trails[0];
+            PersonToTest.AssociateTrail(newTrail);
+            Assert.True(PersonToTest.Trails.Contains(newTrail));
+            PersonToTest.DisassociateTrail(OldTrail);
+            Assert.False(PersonToTest.Trails.Contains(OldTrail));
+            var actualTrail = PersonToTest.Trails[0];
             Assert.Same(expectedTrail, actualTrail);
             
             var newTrip = NewTrip;
             var expectedTrip = newTrip;
-            Person.AssociateTrip(newTrip);
-            Assert.True(Person.Trips.Contains(newTrip));
-            Person.DisassociateTrip(Trip);
-            Assert.False(Person.Trips.Contains(Trip));
-            var actualTrip = Person.Trips[0];
+            PersonToTest.AssociateTrip(newTrip);
+            Assert.True(PersonToTest.Trips.Contains(newTrip));
+            PersonToTest.DisassociateTrip(OldTrip);
+            Assert.False(PersonToTest.Trips.Contains(OldTrip));
+            var actualTrip = PersonToTest.Trips[0];
             Assert.Same(expectedTrip, actualTrip);
 
         }
