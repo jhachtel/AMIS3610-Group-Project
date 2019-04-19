@@ -14,7 +14,7 @@ namespace AMIS3610.GroupProject.Api.Tests
         [Fact]
         public void ChangeAttributes()
         {
-            var Place = new Place()
+            var Place1 = new Place()
                 {
                     Id = 999999998,
                     Name = "Envoy Hotel Tblisi",
@@ -34,7 +34,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.millenniumhotels.com/en/tbilisi/the-biltmore-hotel-tbilisi/"
                 };
 
-            var Gear = new Gear()
+            var Gear1 = new Gear()
                 {
                     Id = 999999998,
                     Name = "SINE 35",
@@ -54,7 +54,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.travelpro.com/crew-11-22-expandable-rollaboard-suiter-4071622"
                 };
 
-            var Person = new Person()
+            var Person1 = new Person()
                 {
                     Id = 999999998,
                     Name = "Sum Yung Pozer",
@@ -80,7 +80,7 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Trips = null
                 };
 
-            var Trail = new Trail()
+            var Trail1 = new Trail()
                 {
                     Id = 999999998,
                     Name = "Sand Point Marsh Trail",
@@ -98,71 +98,71 @@ namespace AMIS3610.GroupProject.Api.Tests
                     Link = "https://www.google.com"
                 };
 
-            var Trip = new Trip()
+            var Trip1 = new Trip()
                 {
                     Id = 999999991,
                     Name = "Tibilisi Trip",
                     Description = "Went ot see the old cathedral"
                 };
             
-            // Trip.AssociatePerson(Person);
-            // Trip.AssociateGear(Gear);
-            // Trip.AssociatePlace(Place);
-            // Trip.AssociateTrail(Trail);
+            Trip1.AssociatePerson(Person1);
+            Trip1.AssociateGear(Gear1);
+            Trip1.AssociatePlace(Place1);
+            Trip1.AssociateTrail(Trail1);
 
             //Tests...
             var newId = 999999999;
-            Trip.ChangeId(newId);
+            Trip1.ChangeId(newId);
             var expectedId = newId;
-            var actualId = Trip.Id;
+            var actualId = Trip1.Id;
             Assert.Equal(expectedId, actualId);
             
             var newName = "Tbilisi Trip";
-            Trip.ChangeName(newName);
+            Trip1.ChangeName(newName);
             var expectedName = newName;
-            var actualName = Trip.Name;
+            var actualName = Trip1.Name;
             Assert.Equal(expectedName, actualName);
             
-            // var newPlace = NewPlace;
-            // var expectedPlace = newPlace;
-            // Trip.AssociatePlace(newPlace);
-            // Assert.True(Trip.Places.Contains(newPlace));
-            // Trip.DisassociatePlace(Place);
-            // Assert.False(Trip.Places.Contains(Place));
-            // var actualPlace = Trip.Places[0];
-            // Assert.Same(expectedPlace, actualPlace);
+            var newPlace = NewPlace;
+            var expectedPlace = newPlace;
+            Trip1.AssociatePlace(newPlace);
+            Assert.True(Trip1.Places.Contains(newPlace));
+            Trip1.DisassociatePlace(Place1);
+            Assert.False(Trip1.Places.Contains(Place1));
+            var actualPlace = Trip1.Places[0];
+            Assert.Same(expectedPlace, actualPlace);
             
-            // var newGear = NewGear;
-            // var expectedGear = newGear;
-            // Trip.AssociateGear(newGear);
-            // Assert.True(Trip.GearList.Contains(newGear));
-            // Trip.DisassociateGear(Gear);
-            // Assert.False(Trip.GearList.Contains(Gear));
-            // var actualGear = Trip.GearList[0];
-            // Assert.Same(expectedGear, actualGear);
+            var newGear = NewGear;
+            var expectedGear = newGear;
+            Trip1.AssociateGear(newGear);
+            Assert.True(Trip1.GearList.Contains(newGear));
+            Trip1.DisassociateGear(Gear1);
+            Assert.False(Trip1.GearList.Contains(Gear1));
+            var actualGear = Trip1.GearList[0];
+            Assert.Same(expectedGear, actualGear);
             
-            // var newPerson = NewPerson;
-            // var expectedPerson = newPerson;
-            // Trip.AssociatePerson(newPerson);
-            // Assert.True(Trip.Companions.Contains(newPerson));
-            // Trip.DisassociatePerson(Person);
-            // Assert.False(Trip.Companions.Contains(Person));
-            // var actualPerson = Trip.Companions[0];
-            // Assert.Same(expectedPerson, actualPerson);
+            var newPerson = NewPerson;
+            var expectedPerson = newPerson;
+            Trip1.AssociatePerson(newPerson);
+            Assert.True(Trip1.Companions.Contains(newPerson));
+            Trip1.DisassociatePerson(Person1);
+            Assert.False(Trip1.Companions.Contains(Person1));
+            var actualPerson = Trip1.Companions[0];
+            Assert.Same(expectedPerson, actualPerson);
             
-            // var newTrail = NewTrail;
-            // var expectedTrail = newTrail;
-            // Trip.AssociateTrail(newTrail);
-            // Assert.True(Trip.Trails.Contains(newTrail));
-            // Trip.DisassociateTrail(Trail);
-            // Assert.False(Trip.Trails.Contains(Trail));
-            // var actualTrail = Trip.Trails[0];
-            // Assert.Same(expectedTrail, actualTrail);
+            var newTrail = NewTrail;
+            var expectedTrail = newTrail;
+            Trip1.AssociateTrail(newTrail);
+            Assert.True(Trip1.Trails.Contains(newTrail));
+            Trip1.DisassociateTrail(Trail1);
+            Assert.False(Trip1.Trails.Contains(Trail1));
+            var actualTrail = Trip1.Trails[0];
+            Assert.Same(expectedTrail, actualTrail);
 
             var newDescription = "Went to see the old cathedral";
-            Trip.ChangeDescription(newDescription);
+            Trip1.ChangeDescription(newDescription);
             var expectedDescription = newDescription;
-            var actualDescription = Trip.Description;
+            var actualDescription = Trip1.Description;
             Assert.Equal(expectedDescription, actualDescription);
         }
     }
