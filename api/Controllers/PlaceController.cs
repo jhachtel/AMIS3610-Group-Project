@@ -20,26 +20,29 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     this.db.Place.Add(new Place()
                     {
                         Id = 1,
-                        Name = "The Flying Pig Downtown",
-                        Location = "Amsterdam, NL",
-                        Type = "Hostel",
-                        Description = "The Flying Pig Downtown hostel is the place to party. Located in the city centre next to Amsterdam Central Station, Dam Square, The Anne Frank House and the bustling Red Light District, this 18th century building has been transformed into one of the best party spots in all of Amsterdam."
+                        Name = "Test Place 1",
+                        Location = "Here",
+                        Type = "Type 1",
+                        Description = "The first test Place.",
+                        Link = "https://www.google.com"
                     });
                     this.db.Place.Add(new Place()
                     {
                         Id = 2,
-                        Name = "Pacific Crest Trail",
-                        Location = "California, Oregon, and Washington, USA",
-                        Type = "Trail",
-                        Description = "The Pacific Crest Trail, officially designated as the Pacific Crest National Scenic Trail (PCT) is a long-distance hiking and equestrian trail closely aligned with the highest portion of the Sierra Nevada and Cascade mountain ranges, which lie 100 to 150 miles (160 to 240 km) east of the U.S. Pacific coast."
+                        Name = "Test Place 2",
+                        Location = "There",
+                        Type = "Type 2",
+                        Description = "The second test Place.",
+                        Link = "https://www.google.com"
                     });
                     this.db.Place.Add(new Place()
                     {
                         Id = 3,
-                        Name = "Schloss Herrenchiemsee",
-                        Location = "Herreninsel, Bavaria, Germany",
-                        Type = "Castle",
-                        Description = "Herrenchiemsee is a complex of royal buildings on Herreninsel, the largest island in the Chiemsee lake, in southern Bavaria, Germany. Together with the neighbouring isle of Frauenchiemsee and the uninhabited Krautinsel, it forms the municipality of Chiemsee, located about 60 kilometres (37 mi) southeast of Munich."
+                        Name = "Test Place 3",
+                        Location = "Everywhere",
+                        Type = "Type 3",
+                        Description = "The third test Place.",
+                        Link = "https://www.google.com"
                     });
                 }
                 this.db.SaveChanges();

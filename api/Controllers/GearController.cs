@@ -20,30 +20,32 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     this.db.Gear.Add(new Gear()
                     {
                         Id = 1,
-                        Name = "REI Co-op Fleece Jacket - Men's",
-                        Brand = "REI Co-op",
-                        Type = "Clothing",
-                        Description = "Perfect for treks outside on a cool day or layered under a coat when wet weather hits, the men's REI Co-op fleece jacket delivers all-purpose outdoor warmth."
+                        Name = "Test Gear 1",
+                        Brand = "This Brand",
+                        Type = "Type 1",
+                        Description = "The first piece of test Gear.",
+                        Link = "https://www.google.com"
                     });
                     this.db.Gear.Add(new Gear()
                     {
                         Id = 2,
-                        Name = "Men's Moab 2 Mid Ventilator",
-                        Brand = "Merrell",
-                        Type = "Footwear",
-                        Description = "Experience out-of-the-box comfort in this ventilated hiker. With durable synthetic leathers, a supportive footbed, and Vibram® traction, all in a versatile package, you won't doubt why Moab stands for MOTHER OF ALL BOOTS™."
+                        Name = "Test Gear 1",
+                        Brand = "That Brand",
+                        Type = "Type 2",
+                        Description = "The first piece of test Gear.",
+                        Link = "https://www.google.com"
                     });
                     this.db.Gear.Add(new Gear()
                     {
                         Id = 3,
-                        Name = "Aspect 3 Tent",
-                        Brand = "Mountain Hardwear",
-                        Type = "Tent",
-                        Description = "When afternoon thundershowers and swarms of skeeters threaten to mar an otherwise perfectly pleasant trip into the mountains, the Aspect™ 3 offers lightweight yet robust three-season protection. With enough living space for you and your gear, it's perfect for summer road trips, lightweight backpacking missions, and long walks to backcountry walls."
+                        Name = "Test Gear 1",
+                        Brand = "Some Other Brand",
+                        Type = "Type 3",
+                        Description = "The first piece of test Gear.",
+                        Link = "https://www.google.com"
                     });
                 }
                 this.db.SaveChanges();
-
         }
 
         [HttpGet]
@@ -97,6 +99,7 @@ namespace AMIS3610.GroupProject.Api.Controllers
             GearToEdit.Brand = Gear.Brand;
             GearToEdit.Type = Gear.Type;
             GearToEdit.Description = Gear.Description;
+            GearToEdit.Link = Gear.Link;
 
             db.Gear.Update(GearToEdit);
             db.SaveChanges();
