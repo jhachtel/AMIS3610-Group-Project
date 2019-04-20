@@ -13,63 +13,63 @@ namespace AMIS3610.GroupProject.Api.Tests
         [Fact]
         public void ChangeAttributes()
         {
-            var OldPlace = new Place()
-                {
-                    Id = 999999900,
-                    Name = "Old Place",
-                    Location = "Old Location",
-                    Type = "Old Type",
-                    Description = "Old Description.",
-                    Link = "https://www.merriam-webster.com/dictionary/place"
-                };
-
-            var NewPlace = new Place()
+            var placeToAdd = new Place()
                 {
                     Id = 999999901,
-                    Name = "New Place",
+                    Name = "Place to Add",
                     Location = "New Location",
                     Type = "New Type",
                     Description = "New Description.",
                     Link = "https://www.thesaurus.com/browse/place"
                 };
+            Assert.NotNull(placeToAdd);
 
-            var TrailToTest = new Trail()
+            var trailToTest = new Trail()
                 {
                     Id = 999999902,
                     Name = "Trail to Test",
-                    Place = null,
                     Description = "Trail to test description.",
                     Link = "http://www.google.com/"
                 };
+            Assert.NotNull(trailToTest);
 
+            //Testing the id field
             var newId = 999999903;
-            TrailToTest.ChangeId(newId);
+            trailToTest.ChangeId(newId);
             var expectedId = newId;
-            var actualId = TrailToTest.Id;
+            var actualId = trailToTest.Id;
             Assert.Equal(expectedId, actualId);
-            
+
+            //Testing the name field            
             var newName = "New Name";
-            TrailToTest.ChangeName(newName);
+            trailToTest.ChangeName(newName);
             var expectedName = newName;
-            var actualName = TrailToTest.Name;
+            var actualName = trailToTest.Name;
             Assert.Equal(expectedName, actualName);
             
-            var newPlace = NewPlace;
-            TrailToTest.ChangePlace(NewPlace);
-            var expectedPlace = newPlace;
-            var actualPlace = TrailToTest.Place;
-            Assert.Equal(expectedPlace, actualPlace);
+            //Testing the places list
+            var place = placeToAdd;
+            var expectedPlace = place;
+            Assert.Empty(trailToTest.Places);
+            trailToTest.AssociatePlace(place);
+            Assert.NotEmpty(trailToTest.Places);
+            var actualPlace = trailToTest.Places[0];
+            Assert.Same(expectedPlace, actualPlace);
+            trailToTest.DisassociatePlace(place);
+            Assert.Empty(trailToTest.Places);
 
+            //Testing the description field            
             var newDescription = "New Description.";
-            TrailToTest.ChangeDescription(newDescription);
+            trailToTest.ChangeDescription(newDescription);
             var expectedDescription = newDescription;
-            var actualDescription = TrailToTest.Description;
+            var actualDescription = trailToTest.Description;
             Assert.Equal(expectedDescription, actualDescription);
-            
+
+            //Testing the link field            
             var newLink = "https://www.amazon.com/";
-            TrailToTest.ChangeLink(newLink);
+            trailToTest.ChangeLink(newLink);
             var expectedLink = newLink;
-            var actualLink = TrailToTest.Link;
+            var actualLink = trailToTest.Link;
             Assert.Equal(expectedLink, actualLink);
         }
     }
