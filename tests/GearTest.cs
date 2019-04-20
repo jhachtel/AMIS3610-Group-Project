@@ -13,50 +13,51 @@ namespace AMIS3610.GroupProject.Api.Tests
         [Fact]
         public void ChangeAttributes()
         {
-            var Gear = new Gear()
+            var GearToTest = new Gear()
                 {
                     Id = 999999900,
-                    Name = "Test Gear",
+                    Name = "Gear to Test",
                     Brand = "Test Brand",
                     Type = "Test Type",
                     Description = "Test Description.",
                     Link = "http://www.google.com/"
                 };
+            Assert.NotNull(GearToTest);
 
             var newId = 999999901;
-            Gear.ChangeId(newId);
+            GearToTest.ChangeId(newId);
             var expectedId = newId;
-            var actualId = Gear.Id;
+            var actualId = GearToTest.Id;
             Assert.Equal(expectedId, actualId);
             
             var newName = "New Test Name";
-            Gear.ChangeName(newName);
+            GearToTest.ChangeName(newName);
             var expectedName = newName;
-            var actualName = Gear.Name;
+            var actualName = GearToTest.Name;
             Assert.Equal(expectedName, actualName);
             
             var newBrand = "New Test Brand";
-            Gear.ChangeBrand(newBrand);
+            GearToTest.ChangeBrand(newBrand);
             var expectedBrand = newBrand;
-            var actualBrand = Gear.Brand;
+            var actualBrand = GearToTest.Brand;
             Assert.Equal(expectedBrand, actualBrand);
             
             var newType = "New Test Type";
-            Gear.ChangeType(newType);
+            GearToTest.ChangeType(newType);
             var expectedType = newType;
-            var actualType = Gear.Type;
+            var actualType = GearToTest.Type;
             Assert.Equal(expectedType, actualType);
 
             var newDescription = "New Test Description";
-            Gear.ChangeDescription(newDescription);
+            GearToTest.ChangeDescription(newDescription);
             var expectedDescription = newDescription;
-            var actualDescription = Gear.Description;
+            var actualDescription = GearToTest.Description;
             Assert.Equal(expectedDescription, actualDescription);
             
             var newLink = "https://justflipacoin.com/";
-            Gear.ChangeLink(newLink);
+            GearToTest.ChangeLink(newLink);
             var expectedLink = newLink;
-            var actualLink = Gear.Link;
+            var actualLink = GearToTest.Link;
             Assert.Equal(expectedLink, actualLink);
         }
     }
