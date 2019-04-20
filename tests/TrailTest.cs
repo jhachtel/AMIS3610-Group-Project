@@ -16,7 +16,7 @@ namespace AMIS3610.GroupProject.Api.Tests
             var placeToAdd = new Place()
                 {
                     Id = 999999901,
-                    Name = "Place to Test",
+                    Name = "Place to Add",
                     Location = "New Location",
                     Type = "New Type",
                     Description = "New Description.",
@@ -28,7 +28,6 @@ namespace AMIS3610.GroupProject.Api.Tests
                 {
                     Id = 999999902,
                     Name = "Trail to Test",
-                    Place = null,
                     Description = "Trail to test description.",
                     Link = "http://www.google.com/"
                 };
@@ -47,13 +46,17 @@ namespace AMIS3610.GroupProject.Api.Tests
             var expectedName = newName;
             var actualName = trailToTest.Name;
             Assert.Equal(expectedName, actualName);
-
-            //Testing the place field            
-            var newPlace = placeToAdd;
-            trailToTest.ChangePlace(placeToAdd);
-            var expectedPlace = newPlace;
-            var actualPlace = trailToTest.Place;
-            Assert.Equal(expectedPlace, actualPlace);
+            
+            //Testing the places list
+            var place = placeToAdd;
+            var expectedPlace = place;
+            Assert.Empty(trailToTest.Places);
+            trailToTest.AssociatePlace(place);
+            Assert.NotEmpty(trailToTest.Places);
+            var actualPlace = trailToTest.Places[0];
+            Assert.Same(expectedPlace, actualPlace);
+            trailToTest.DisassociatePlace(place);
+            Assert.Empty(trailToTest.Places);
 
             //Testing the description field            
             var newDescription = "New Description.";

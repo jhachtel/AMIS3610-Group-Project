@@ -49,7 +49,6 @@ namespace AMIS3610.GroupProject.Api.Tests
                 {
                     Id = 999999907,
                     Name = "Trail to Add",
-                    Place = null,
                     Description = "New Description.",
                     Link = "https://www.thesaurus.com/browse/description"
                 };
