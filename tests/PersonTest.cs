@@ -25,16 +25,16 @@ namespace AMIS3610.GroupProject.Api.Tests
                 };
             Assert.NotNull(placeToAdd);
 
-            var gearToAdd = new Gear()
+            var itemToAdd = new Item()
                 {
                     Id = 999999901,
-                    Name = "Gear to Add",
+                    Name = "Item to Add",
                     Brand = "New Brand",
                     Type = "New Type",
                     Description = "New Description.",
-                    Link = "https://www.thesaurus.com/browse/gear"
+                    Link = "https://www.thesaurus.com/browse/item"
                 };
-            Assert.NotNull(gearToAdd);
+            Assert.NotNull(itemToAdd);
 
             var friendToAdd = new Person()
                 {
@@ -111,15 +111,15 @@ namespace AMIS3610.GroupProject.Api.Tests
             Assert.Empty(personToTest.Places);
             
             //Testing the gear list
-            var gear = gearToAdd;
-            var expectedGear = gear;
-            Assert.Empty(personToTest.Gear);
-            personToTest.AssociateGear(gear);
-            Assert.NotEmpty(personToTest.Gear);
-            var actualGear = personToTest.Gear[0];
-            Assert.Same(expectedGear, actualGear);
-            personToTest.DisassociateGear(gear);
-            Assert.Empty(personToTest.Gear);
+            var item = itemToAdd;
+            var expectedItem = item;
+            Assert.Empty(personToTest.Item);
+            personToTest.AssociateItem(item);
+            Assert.NotEmpty(personToTest.Item);
+            var actualItem = personToTest.Item[0];
+            Assert.Same(expectedItem, actualItem);
+            personToTest.DisassociateItem(item);
+            Assert.Empty(personToTest.Item);
 
             //Tesing the friends list
             var friend = friendToAdd;

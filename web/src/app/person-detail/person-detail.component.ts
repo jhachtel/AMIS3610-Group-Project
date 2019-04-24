@@ -2,20 +2,20 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Person }         from '../people';
-import { PeopleService }  from '../people.service';
+import { Person }         from '../person';
+import { PersonService }  from '../person.service';
 
 @Component({
-  selector: 'app-people-detail',
-  templateUrl: './people-detail.component.html',
-  styleUrls: [ './people-detail.component.css' ]
+  selector: 'app-person-detail',
+  templateUrl: './person-detail.component.html',
+  styleUrls: [ './person-detail.component.css' ]
 })
-export class PeopleDetailComponent implements OnInit {
+export class PersonDetailComponent implements OnInit {
   @Input() person: Person;
 
   constructor(
     private route: ActivatedRoute,
-    private peopleService: PeopleService,
+    private personService: PersonService,
     private location: Location
   ) {}
 
@@ -25,7 +25,7 @@ export class PeopleDetailComponent implements OnInit {
 
   getPerson(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.peopleService.getPerson(id)
+    this.personService.getPerson(id)
       .subscribe(person => this.person = person);
   }
 
@@ -34,7 +34,7 @@ export class PeopleDetailComponent implements OnInit {
   }
 
  save(): void {
-    this.peopleService.updatePerson(this.person)
+    this.personService.updatePerson(this.person)
       .subscribe(() => this.goBack());
   }
 }
