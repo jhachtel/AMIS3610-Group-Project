@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Place } from '../places';
-import { PlacesService } from '../places.service';
+import { Place } from '../place';
+import { PlaceService } from '../place.service';
 
 @Component({
   selector: 'app-places',
@@ -9,9 +9,9 @@ import { PlacesService } from '../places.service';
   styleUrls: ['./places.component.css']
 })
 export class PlacesComponent implements OnInit {
-  places: Places[];
+  places: Place[];
 
-  constructor(private placeService: PlacesService) { }
+  constructor(private placeService: PlaceService) { }
 
   ngOnInit() {
     this.getPlaces();

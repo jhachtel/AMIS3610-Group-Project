@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Gear } from '../gear';
-import { GearService } from '../gear.service';
+import { Item } from '../item';
+import { ItemService } from '../item.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,16 +8,16 @@ import { GearService } from '../gear.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  gear: Gear[] = [];
+  items: Item[] = [];
 
-  constructor(private gearService: GearService) { }
+  constructor(private ItemService: ItemService) { }
 
   ngOnInit() {
-    this.getGear();
+    this.getItem();
   }
 
-  getGear(): void {
-    this.gearService.getAllGear()
-      .subscribe(gear => this.gear = gear.slice(1, 5));
+  getItem(): void {
+    this.ItemService.getItems()
+      .subscribe(item => this.items = item.slice(1, 5));
   }
 }

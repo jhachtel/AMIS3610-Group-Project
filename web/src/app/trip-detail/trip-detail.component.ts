@@ -2,31 +2,31 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero }         from '../gear';
-import { HeroService }  from '../gear.service';
+import { Trip }         from '../trip';
+import { TripService }  from '../trip.service';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.css' ]
+  selector: 'app-trip-detail',
+  templateUrl: './trip-detail.component.html',
+  styleUrls: [ './trip-detail.component.css' ]
 })
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+export class TripDetailComponent implements OnInit {
+  @Input() trip: Trip;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private tripService: TripService,
     private location: Location
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getTrip();
   }
 
-  getHero(): void {
+  getTrip(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.tripService.getTrip(id)
+      .subscribe(trip => this.trip = trip);
   }
 
   goBack(): void {
@@ -34,7 +34,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
  save(): void {
-    this.heroService.updateHero(this.hero)
+    this.tripService.updateTrip(this.trip)
       .subscribe(() => this.goBack());
   }
 }

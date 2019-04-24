@@ -2,31 +2,31 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero }         from '../gear';
-import { HeroService }  from '../gear.service';
+import { Place }         from '../place';
+import { PlaceService }  from '../place.service';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.css' ]
+  selector: 'app-place-detail',
+  templateUrl: './place-detail.component.html',
+  styleUrls: [ './place-detail.component.css' ]
 })
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+export class PlaceDetailComponent implements OnInit {
+  @Input() place: Place;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private placeService: PlaceService,
     private location: Location
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getPlace();
   }
 
-  getHero(): void {
+  getPlace(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.placeService.getPlace(id)
+      .subscribe(place => this.place = place);
   }
 
   goBack(): void {
@@ -34,7 +34,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
  save(): void {
-    this.heroService.updateHero(this.hero)
+    this.placeService.updatePlace(this.place)
       .subscribe(() => this.goBack());
   }
 }
