@@ -6,19 +6,19 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Place } from '../place';
-import { PlaceService } from '../place.service';
+import { Person } from '../person';
+import { PersonService } from '../person.service';
 
 @Component({
-  selector: 'app-place-search',
-  templateUrl: './place-search.component.html',
-  styleUrls: [ './place-search.component.css' ]
+  selector: 'app-person-search',
+  templateUrl: './person-search.component.html',
+  styleUrls: [ './person-search.component.css' ]
 })
-export class PlaceSearchComponent implements OnInit {
-  places$: Observable<Place[]>;
+export class PersonSearchComponent implements OnInit {
+  people$: Observable<Person[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private placeService: PlaceService) {}
+  constructor(private personService: PersonService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -26,7 +26,7 @@ export class PlaceSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.places$ = this.searchTerms.pipe(
+    this.people$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -34,7 +34,7 @@ export class PlaceSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.placeService.searchPlaces(term)),
+      switchMap((term: string) => this.personService.searchPeople(term)),
     );
   }
 }

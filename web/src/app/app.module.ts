@@ -1,45 +1,36 @@
 import { NgModule }           from '@angular/core';
 import { BrowserModule }      from '@angular/platform-browser';
 import { FormsModule }        from '@angular/forms';
-import { HttpClientModule }   from '@angular/common/http';
+import { HttpClientModule, HttpClient }   from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemsComponent } from './items/items.component';
-import { PeopleComponent } from './people/people.component';
-import { PlacesComponent } from './places/places.component';
-import { TrailsComponent } from './trails/trails.component';
-import { TripsComponent } from './trips/trips.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ItemModule } from './item.module';
+import { PersonModule } from './person.module';
+import { PlaceModule } from './place.module';
+import { TrailModule } from './trail.module';
+import { TripModule } from './trip.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
-import { ItemSearchComponent } from './item-search/item-search.component';
 import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  
-  declarations: [
-    AppComponent,
-    ItemsComponent,
-    PeopleComponent,
-    PlacesComponent,
-    TrailsComponent,
-    TripsComponent,
-    NavbarComponent
-  ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
     DashboardComponent,
-    ItemsComponent,
-    ItemDetailComponent,
     MessagesComponent,
-    ItemSearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    ItemModule,
+    PersonModule,
+    PlaceModule,
+    TrailModule,
+    TripModule
+  ],
+  declarations: [
+    AppComponent
   ],
   bootstrap: [ AppComponent ]
 })
