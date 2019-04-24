@@ -11,21 +11,21 @@ import { ItemService } from '../item.service';
 export class ItemsComponent implements OnInit {
   items: Item[];
 
-  constructor(private itemService: ItemService) { }
+  constructor(private ItemService: ItemService) { }
 
   ngOnInit() {
     this.getItems();
   }
 
   getItems(): void {
-    this.itemService.getItems()
+    this.ItemService.getItems()
     .subscribe(items => this.items = items);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.itemService.addItem({ name } as Item)
+    this.ItemService.addItem({ name } as Item)
       .subscribe(item => {
         this.items.push(item);
       });
@@ -33,7 +33,7 @@ export class ItemsComponent implements OnInit {
 
   delete(item: Item): void {
     this.items = this.items.filter(i => i !== item);
-    this.itemService.deleteItem(item).subscribe();
+    this.ItemService.deleteItem(item).subscribe();
   }
 
 }

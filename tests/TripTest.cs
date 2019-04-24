@@ -23,16 +23,16 @@ namespace AMIS3610.GroupProject.Api.Tests
                 };
             Assert.NotNull(companionToAdd);
 
-            var gearToAdd = new Gear()
+            var itemToAdd = new Item()
                 {
                     Id = 999999903,
-                    Name = "Gear to Add",
+                    Name = "Item to Add",
                     Brand = "New Brand",
                     Type = "New Type",
                     Description = "New Description.",
-                    Link = "https://www.thesaurus.com/browse/gear"
+                    Link = "https://www.thesaurus.com/browse/item"
                 };
-            Assert.NotNull(gearToAdd);
+            Assert.NotNull(itemToAdd);
 
             var placeToAdd = new Place()
                 {
@@ -94,16 +94,16 @@ namespace AMIS3610.GroupProject.Api.Tests
             tripToTest.DisassociatePlace(place);
             Assert.Empty(tripToTest.Places);
             
-            //Testing the gear list
-            var gear = gearToAdd;
-            var expectedGear = gear;
-            Assert.Empty(tripToTest.GearList);
-            tripToTest.AssociateGear(gear);
-            Assert.NotEmpty(tripToTest.GearList);
-            var actualGear = tripToTest.GearList[0];
-            Assert.Same(expectedGear, actualGear);
-            tripToTest.DisassociateGear(gear);
-            Assert.Empty(tripToTest.GearList);
+            //Testing the item list
+            var item = itemToAdd;
+            var expectedItem = item;
+            Assert.Empty(tripToTest.ItemList);
+            tripToTest.AssociateItem(item);
+            Assert.NotEmpty(tripToTest.ItemList);
+            var actualGear = tripToTest.ItemList[0];
+            Assert.Same(expectedItem, actualGear);
+            tripToTest.DisassociateItem(item);
+            Assert.Empty(tripToTest.ItemList);
             
             //Testing the companions list
             var companion = companionToAdd;

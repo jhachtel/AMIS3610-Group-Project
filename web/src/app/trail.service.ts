@@ -44,7 +44,7 @@ export class TrailService {
   }
 
   /** GET trail by id. Will 404 if id not found */
-  gettrail(id: number): Observable<Trail> {
+  getTrail(id: number): Observable<Trail> {
     const url = `${this.trailsUrl}/${id}`;
     return this.http.get<Trail>(url).pipe(
       tap(_ => this.log(`fetched trail id=${id}`)),
@@ -69,7 +69,7 @@ export class TrailService {
   /** POST: add a new trail to the server */
   addTrail (trail: Trail): Observable<Trail> {
     return this.http.post<Trail>(this.trailsUrl, trail, httpOptions).pipe(
-      tap((newtrail: Trail) => this.log(`added trail w/ id=${newTrail.id}`)),
+      tap((newTrail: Trail) => this.log(`added trail w/ id=${newTrail.id}`)),
       catchError(this.handleError<Trail>('addTrail'))
     );
   }
