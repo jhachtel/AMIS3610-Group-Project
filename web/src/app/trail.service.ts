@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class TrailService {
 
-  private trailsUrl = 'api/trails';  // URL to web api
+  private trailsUrl = 'https://localhost:5001/api/trail';  // URL to web api
 
   constructor(
     private http: HttpClient,

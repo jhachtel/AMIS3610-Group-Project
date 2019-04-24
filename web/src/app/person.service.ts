@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class PersonService {
 
-  private peopleUrl = 'api/people';  // URL to web api
+  private peopleUrl = 'https://localhost:5001/api/person';  // URL to web api
 
   constructor(
     private http: HttpClient,

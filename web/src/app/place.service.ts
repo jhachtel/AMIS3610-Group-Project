@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class PlaceService {
 
-  private placesUrl = 'api/places';  // URL to web api
+  private placesUrl = 'https://localhost:5001/api/place';  // URL to web api
 
   constructor(
     private http: HttpClient,

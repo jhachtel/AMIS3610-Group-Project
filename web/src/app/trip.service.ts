@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class TripService {
 
-  private tripsUrl = 'api/trips';  // URL to web api
+  private tripsUrl = 'https://localhost:5001/api/trip';  // URL to web api
 
   constructor(
     private http: HttpClient,
