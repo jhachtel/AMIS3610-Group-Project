@@ -15,8 +15,8 @@ import { TripDetailComponent }  from './trip-detail/trip-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'items', component: ItemsComponent },
-  { path: 'items/detail/:id', component: ItemDetailComponent },
+  { path: 'items', component: ItemsComponent  },
+  { path: 'items/detail/:id', component: ItemDetailComponent},
   { path: 'people', component: PeopleComponent },
   { path: 'people/detail/:id', component: PersonDetailComponent },
   { path: 'places', component: PlacesComponent },
@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'trips', component: TripsComponent },
   { path: 'trips/detail/:id', component: TripDetailComponent }
 ];
+//outlets can be added for each route but unsure how useful that is currently
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
