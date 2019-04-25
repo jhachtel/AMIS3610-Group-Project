@@ -1,13 +1,59 @@
-<h1>{{ title }}</h1>
+
+ <!-- <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        <a class="navbar-brand" href="#">Dashboard</a>
+
+
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/people">People</a></li>
+        <li><a routerLink="/items">Items</a></li>
+        <li><a routerLink="/places">Places</a></li>
+        <li><a routerLink="/trails">Trails</a></li>
+        <li><a routerLink="/trips">Trips</a></li>
+      </ul>
+    </div>
+  </nav> -->
+    
+  <!-- <div class="container">
+    <h3>Basic Navbar Example</h3>
+    <p><router-outlet></router-outlet></p>
+    
+  </div>
+  <app-messages></app-messages> --> 
+
+
+
+
+
 
 <nav>
+  <div class="container-fluid">
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/people">People</a>
   <a routerLink="/items">Items</a>
   <a routerLink="/places">Places</a>
   <a routerLink="/trails">Trails</a>
   <a routerLink="/trips">Trips</a>
-</nav>
+  </div>
+</nav> 
 
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<div class="container">
+    <h3>Router</h3>
+    <p><router-outlet></router-outlet></p>
+  </div>
+  
+  <div class="container-fluid">
+    <h3>App</h3>
+    <p><app-messages></app-messages></p>
+  </div>
+
+<!-- <router-outlet></router-outlet>
+<app-messages></app-messages> -->
