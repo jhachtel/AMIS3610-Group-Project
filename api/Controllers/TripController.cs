@@ -20,32 +20,32 @@ namespace AMIS3610.GroupProject.Api.Controllers
                     this.db.Trip.Add(new Trip()
                     {
                         Id = 1,
-                        Name="Trail 1",
-                        Description = "Super cool Trail 1."//,
-                        // Companions = null,
-                        // GearList = null,
-                        // Places = null,
-                        // Trails = null
+                        Name="Trip 1",
+                        Description = "Super cool Trip 1.",
+                        Companions = null,
+                        ItemList = null,
+                        Places = null,
+                        Trails = null
                     });
                     this.db.Trip.Add(new Trip()
                     {
-                        Id = 1,
-                        Name="Trail 2",
-                        Description = "Super cool Trail 2."//,
-                        // Companions = null,
-                        // GearList = null,
-                        // Places = null,
-                        // Trails = null
+                        Id = 2,
+                        Name="Trip 2",
+                        Description = "Super cool Trip 2.",
+                        Companions = null,
+                        ItemList = null,
+                        Places = null,
+                        Trails = null
                     });
                     this.db.Trip.Add(new Trip()
                     {
-                        Id = 1,
-                        Name="Trail 3",
-                        Description = "Super cool Trail 3."//,
-                        // Companions = null,
-                        // GearList = null,
-                        // Places = null,
-                        // Trails = null
+                        Id = 3,
+                        Name="Trip 3",
+                        Description = "Super cool Trip 3.",
+                        Companions = null,
+                        ItemList = null,
+                        Places = null,
+                        Trails = null
                     });
                 }
                 this.db.SaveChanges();

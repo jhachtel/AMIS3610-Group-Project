@@ -1,3 +1,13 @@
 <h1>{{ title }}</h1>
-<app-navbar></app-navbar>
+
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/people">People</a>
+  <a routerLink="/items">Items</a>
+  <a routerLink="/places">Places</a>
+  <a routerLink="/trails">Trails</a>
+  <a routerLink="/trips">Trips</a>
+</nav>
+
 <router-outlet></router-outlet>
+<app-messages></app-messages>

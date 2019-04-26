@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../gear';
-import { HeroService } from '../gear.service';
+import { Trip } from '../trip';
+import { TripService } from '../trip.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-trips',
+  templateUrl: './trips.component.html',
+  styleUrls: ['./trips.component.css']
 })
-export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+export class TripsComponent implements OnInit {
+  trips: Trip[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private TripService: TripService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getTrips();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+  getTrips(): void {
+    this.TripService.getTrips()
+    .subscribe(trips => this.trips = trips);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
+    this.TripService.addTrip({ name } as Trip)
+      .subscribe(trip => {
+        this.trips.push(trip);
       });
   }
 
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+  delete(trip: Trip): void {
+    this.trips = this.trips.filter(i => i !== trip);
+    this.TripService.deleteTrip(trip).subscribe();
   }
 
 }

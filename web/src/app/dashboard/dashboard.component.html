@@ -1,11 +1,59 @@
-<h3>Top Gear</h3>
+<h3>Top People</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let gear of gear" class="col-1-4"
-      routerLink="/detail/{{gear.id}}">
-    <div class="module gear">
-      <h4>{{gear.name}}</h4>
+  <a *ngFor="let person of people" class="col-1-4"
+      routerLink="./{{person.id}}">
+    <div class="module person">
+      <h4>{{person.name}}</h4>
     </div>
   </a>
 </div>
 
-<app-gear-search></app-gear-search>
+<app-person-search></app-person-search>
+
+<h3>Top Items</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let item of items" class="col-1-4"
+      routerLink="./{{item.id}}">
+    <div class="module item">
+      <h4>{{item.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-item-search></app-item-search>
+
+<h3>Top Places</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let place of places" class="col-1-4"
+      routerLink="./{{place.id}}">
+    <div class="module place">
+      <h4>{{place.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-place-search></app-place-search>
+
+<h3>Top Trails</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let trail of trails" class="col-1-4"
+      routerLink="./{{trail.id}}">
+    <div class="module trail">
+      <h4>{{trail.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-trail-search></app-trail-search>
+
+<h3>Top Trips</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let trip of trips" class="col-1-4"
+      routerLink="./{{trip.id}}">
+    <div class="module trip">
+      <h4>{{trip.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-trip-search></app-trip-search>

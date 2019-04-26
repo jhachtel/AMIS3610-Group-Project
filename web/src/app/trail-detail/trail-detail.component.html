@@ -1,9 +1,12 @@
-<div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
+<div *ngIf="trail">
+  <h2>{{trail.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{trail.id}}</div>
+  <div><span>name: </span>{{trail.name}}</div>
+  <div><span>description: </span>{{trail.description}}</div>
+  <div><span>link: </span>{{trail.link}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input [(ngModel)]="trail.name" placeholder="name"/>
     </label>
   </div>
   <button (click)="goBack()">go back</button>

@@ -69,7 +69,7 @@ namespace AMIS3610.GroupProject.Api.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Gear", b =>
+            modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -86,7 +86,7 @@ namespace AMIS3610.GroupProject.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Gear");
+                    b.ToTable("Item");
                 });
 
             modelBuilder.Entity("AMIS3610.GroupProject.Api.Models.Person", b =>

@@ -2,31 +2,31 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero }         from '../gear';
-import { HeroService }  from '../gear.service';
+import { Trail }         from '../trail';
+import { TrailService }  from '../trail.service';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.css' ]
+  selector: 'app-trail-detail',
+  templateUrl: './trail-detail.component.html',
+  styleUrls: [ './trail-detail.component.css' ]
 })
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+export class TrailDetailComponent implements OnInit {
+  @Input() trail: Trail;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private trailService: TrailService,
     private location: Location
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getTrail();
   }
 
-  getHero(): void {
+  getTrail(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.trailService.getTrail(id)
+      .subscribe(trail => this.trail = trail);
   }
 
   goBack(): void {
@@ -34,7 +34,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
  save(): void {
-    this.heroService.updateHero(this.hero)
+    this.trailService.updateTrail(this.trail)
       .subscribe(() => this.goBack());
   }
 }

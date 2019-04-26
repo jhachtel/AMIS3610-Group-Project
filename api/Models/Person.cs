@@ -11,7 +11,7 @@ namespace AMIS3610.GroupProject.Api.Models
         public string   Bio { get; set; }
 
         public List<Place> Places = new List<Place>();
-        public List<Gear> Gear = new List<Gear>();
+        public List<Item> Item = new List<Item>();
         public List<Person> Friends = new List<Person>();
         public List<Trail>  Trails = new List<Trail>();
         public List<Trip>   Trips = new List<Trip>();
@@ -31,14 +31,14 @@ namespace AMIS3610.GroupProject.Api.Models
             Friends.Add(person);
         }
 
-        public void AssociateGear(Gear gear)
+        public void AssociateItem(Item item)
         {
-            if (gear == null)
+            if (item == null)
             {
-                throw new ArgumentNullException(nameof(gear));
+                throw new ArgumentNullException(nameof(item));
             }
 
-            Gear.Add(gear);
+            Item.Add(item);
         }
 
         public void AssociatePlace(Place place)
@@ -81,14 +81,14 @@ namespace AMIS3610.GroupProject.Api.Models
             Friends.Remove(person);
         }
 
-        public void DisassociateGear(Gear gear)
+        public void DisassociateItem(Item item)
         {
-            if (gear == null)
+            if (item == null)
             {
-                throw new ArgumentNullException(nameof(gear));
+                throw new ArgumentNullException(nameof(item));
             }
 
-            Gear.Remove(gear);
+            Item.Remove(item);
         }
 
         public void DisassociatePlace(Place place)
