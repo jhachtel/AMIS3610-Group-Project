@@ -12,7 +12,7 @@
 
 <ul class="people">
   <li *ngFor="let person of people">
-    <a routerLink="/detail/{{person.id}}">
+    <a routerLink="./{{person.id}}">
       <span class="badge">{{person.id}}</span> {{person.name}}
     </a>
     <button class="delete" title="delete person"
