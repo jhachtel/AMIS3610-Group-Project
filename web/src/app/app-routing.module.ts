@@ -16,15 +16,15 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'items', component: ItemsComponent },
-  { path: 'items/detail/:id', component: ItemDetailComponent },
+  { path: 'items/:id', component: ItemDetailComponent },
   { path: 'people', component: PeopleComponent },
-  { path: 'people/detail/:id', component: PersonDetailComponent },
+  { path: 'people/:id', component: PersonDetailComponent },
   { path: 'places', component: PlacesComponent },
-  { path: 'places/detail/:id', component: PlaceDetailComponent },
+  { path: 'places/:id', component: PlaceDetailComponent },
   { path: 'trails', component: TrailsComponent },
-  { path: 'trails/detail/:id', component: TrailDetailComponent },
+  { path: 'trails/:id', component: TrailDetailComponent },
   { path: 'trips', component: TripsComponent },
-  { path: 'trips/detail/:id', component: TripDetailComponent }
+  { path: 'trips/:id', component: TripDetailComponent }
 ];
 
 @NgModule({
