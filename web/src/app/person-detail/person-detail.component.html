@@ -1,11 +1,38 @@
 <div *ngIf="person">
   <h2>{{person.name | uppercase}} Details</h2>
   <div><span>id: </span>{{person.id}}</div>
+  <div><span>name: </span>{{person.name}}</div>
+  <div><span>email: </span>{{person.email}}</div>
+  <div><span>bio: </span>{{person.bio}}</div>
+
+  <h3>Friends</h3>
+  <div><span>friends: </span>{{item.description}}</div>
+
+  <h3>Favorite Items</h3>
+  <div class="grid grid-pad">
+    <a *ngFor="let person of people" class="col-1-4" routerLink="/detail/{{person.id}}">
+    <div class="module person">
+      <h4>{{item.name}}</h4>
+    </div>
+    </a>
+  </div>
+  <div><span>items: </span>{{item.link}}</div>
+
+  <h3>Friends</h3>
+  <div><span>friends: </span>{{person.name}}</div>
+
+  <h3>Favorite Trails</h3>
+  <div><span>trails: </span>{{trail.name}}</div>
+
+  <h3>Favorite Trips</h3>
+  <div><span>trips: </span>{{trip.name}}</div>
+
   <div>
     <label>name:
       <input [(ngModel)]="person.name" placeholder="name"/>
     </label>
   </div>
+
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
 </div>
