@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class PlaceService {
 
-  private placesUrl = 'https://localhost:5001/api/place';  // URL to web api
+  private placesUrl = 'https://off-the-trail.azurewebsites.net/api/place';  // URL to web api
 
   constructor(
     private http: HttpClient,
