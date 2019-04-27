@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getItem();
-    this.getPerson();
+    this.getPeople();
     this.getPlace();
     this.getTrip();
     this.getTrail();
@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
     this.ItemService.getItems()
       .subscribe(item => this.items = item.slice(0, 5));
   }
-  getPerson (): void {
+  getPeople (): void {
     this.PersonService.getPeople()
       .subscribe(person => this.persons = person.slice(0, 5));
   }

@@ -31,7 +31,7 @@ export class ItemService {
 
   /** GET item by id. Return `undefined` when id not found */
   getItemNo404<Data>(id: number): Observable<Item> {
-    const url = `${this.itemsUrl}/${id}';  //?id=${id}`;
+    const url = `${this.itemsUrl}/${id}`;  //?id=${id}`;
     return this.http.get<Item[]>(url)
       .pipe(
         map(items => items[0]), // returns a {0|1} element array
