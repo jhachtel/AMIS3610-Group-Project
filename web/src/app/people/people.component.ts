@@ -11,21 +11,21 @@ import { PersonService } from '../person.service';
 export class PeopleComponent implements OnInit {
   people: Person[];
 
-  constructor(private personService: PersonService) { }
+  constructor(private PersonService: PersonService) { }
 
   ngOnInit() {
     this.getPeople();
   }
 
   getPeople(): void {
-    this.personService.getPeople()
+    this.PersonService.getPeople()
     .subscribe(people => this.people = people);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.personService.addPerson({ name } as Person)
+    this.PersonService.addPerson({ name } as Person)
       .subscribe(person => {
         this.people.push(person);
       });
@@ -33,7 +33,7 @@ export class PeopleComponent implements OnInit {
 
   delete(person: Person): void {
     this.people = this.people.filter(p => p !== person);
-    this.personService.deletePerson(person).subscribe();
+    this.PersonService.deletePerson(person).subscribe();
   }
 
 }

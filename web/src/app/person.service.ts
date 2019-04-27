@@ -31,7 +31,7 @@ export class PersonService {
 
   /** GET person by id. Return `undefined` when id not found */
   getPersonNo404<Data>(id: number): Observable<Person> {
-    const url = `${this.peopleUrl}/?id=${id}`;
+    const url = `${this.peopleUrl}/${id}` // ?id=${id}`;
     return this.http.get<Person[]>(url)
       .pipe(
         map(person => Person[0]), // returns a {0|1} element array
@@ -45,7 +45,7 @@ export class PersonService {
 
   /** GET person by id. Will 404 if id not found */
   getPerson(id: number): Observable<Person> {
-    const url = `${this.peopleUrl}/${id}`;
+    const url = `${this.peopleUrl}/${id}` // ${id}`;
     return this.http.get<Person>(url).pipe(
       tap(_ => this.log(`fetched person id=${id}`)),
       catchError(this.handleError<Person>(`getPerson id=${id}`))
