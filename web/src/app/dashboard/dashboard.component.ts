@@ -41,23 +41,23 @@ export class DashboardComponent implements OnInit {
   }
   getItem(): void {
     this.ItemService.getItems()
-      .subscribe(item => this.items = item.slice(0, 5));
+      .subscribe(item => this.items = item.slice(0, 4));
   }
   getPeople (): void {
     this.PersonService.getPeople()
-      .subscribe(person => this.persons = person.slice(0, 5));
+      .subscribe(person => this.persons = person.slice(0, 4));
   }
   getPlace (): void {
     this.PlaceService.getPlaces()
-      .subscribe(place => this.places = place.slice(0, 5));
+      .subscribe(place => this.places = place.slice(0, 4));
   }
   getTrip (): void {
     this.TripService.getTrips()
-      .subscribe(trip => this.trips = trip.slice(0, 5));
+      .subscribe(trip => this.trips = trip.slice(0, 4));
   }
   getTrail(): void {
     this.TrailService.getTrails()
-      .subscribe(trail => this.trails = trail.slice(0, 5));
+      .subscribe(trail => this.trails = trail.slice(0, 4));
   }
 }
 
