@@ -23,35 +23,41 @@ export class DashboardComponent implements OnInit {
   trips: Trip []=[];
   trails: Trail[]=[];
 
-  constructor(private ItemService: ItemService, PersonService: PersonService, PlaceService: PlaceService, TripService: TripService, TrailService: TrailService) { }
+  constructor(private ItemService: ItemService, 
+              private PersonService: PersonService, 
+              private PlaceService: PlaceService, 
+              private TripService: TripService, 
+              private TrailService: TrailService) 
+              { 
+              }
 
   ngOnInit() {
     this.getItem();
-    // this.getPerson();
-    // this.getPlace();
-    // this.getTrip();
-    // this.getTrail();
+    this.getPerson();
+    this.getPlace();
+    this.getTrip();
+    this.getTrail();
     
   }
   getItem(): void {
     this.ItemService.getItems()
-      .subscribe(item => this.items = item.slice(1, 5));
+      .subscribe(item => this.items = item.slice(0, 5));
   }
-  // getPerson (): void {
-  //   this.PersonService.getPeople()
-  //     .subscribe(person => this.persons = person.slice(1, 5));
-  // }
-  // getPlace (): void {
-  //   this.PlaceService.getPlaces()
-  //     .subscribe(place => this.places = place.slice(1, 5));
-  // }
-  // getTrip (): void {
-  //   this.TripService.getTrips()
-  //     .subscribe(trip => this.trips = trip.slice(1, 5));
-  // }
-  // getTrail(): void {
-  //   this.TrailService.getTrails()
-  //     .subscribe(trail => this.trails = trail.slice(1, 5));
-  // }
+  getPerson (): void {
+    this.PersonService.getPeople()
+      .subscribe(person => this.persons = person.slice(0, 5));
+  }
+  getPlace (): void {
+    this.PlaceService.getPlaces()
+      .subscribe(place => this.places = place.slice(0, 5));
+  }
+  getTrip (): void {
+    this.TripService.getTrips()
+      .subscribe(trip => this.trips = trip.slice(0, 5));
+  }
+  getTrail(): void {
+    this.TrailService.getTrails()
+      .subscribe(trail => this.trails = trail.slice(0, 5));
+  }
 }
 
